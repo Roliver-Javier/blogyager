@@ -10,8 +10,7 @@ export class PostListComponent{
 
   @Input() vm : {};
 
-  ngOnInit(){
-  }
+  ngOnInit(){ }
 
   constructor(private post : PostService) { }
 

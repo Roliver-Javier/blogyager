@@ -3,14 +3,18 @@ import { Observable, BehaviorSubject } from 'rxjs';
 import { Post } from 'src/app/shared/model/post';
 import { MediumModel } from 'src/app/shared/model/medium/MediumModel';
 import { MediumPost } from 'src/app/shared/model/medium/mediumPost';
-import { HttpClient } from '@angular/common/http';
 import {map, switchMap, shareReplay} from 'rxjs/operators';
 
 @Injectable()
 export class PostServiceMock{
 
-  postCollection: Post[] = [];
-  postDoc : Post;
+  private mediumPostsBS = new BehaviorSubject<MediumPost[]>([]);
+  private postDetailBS = new BehaviorSubject('');
+
+  constructor() {
+    console.log('mock post service initializing....');
+  }
+
   private httpGetSimulation(): Observable<MediumModel> {
     return new Observable((subscriber) => {
       const mediumModel: MediumModel ={
@@ -118,7 +122,6 @@ export class PostServiceMock{
     });
   }
 
-  private mediumPostsBS = new BehaviorSubject<MediumPost[]>([]);
   mediumPosts$ = this.mediumPostsBS.pipe(
     switchMap( ()=>this.httpGetSimulation()),
     map((mediumObject)=> mediumObject.items),
@@ -136,7 +139,7 @@ export class PostServiceMock{
     shareReplay()    
   );
 
-  private postDetailBS = new BehaviorSubject('');
+  
   postDetail$ = this.postDetailBS.pipe(
     switchMap( () => this.mediumPosts$),
     map( (posts)=>{
@@ -164,53 +167,7 @@ export class PostServiceMock{
 
   }
   
-  constructor(private http : HttpClient) {
-    console.log('mock post service initializing....');
-  }
-
-
   
- 
-  
-
-  
-
-
-
-  getPostData() : Observable<any>{
-    return new Observable((subscriber)=>{
-          subscriber.next({
-            author:"<p>Roliver Javier Rodriguez</p>",
-            content:"<p> I've been a backend web developer for several years now. Swimming in the waters of databases, object oriented programming, and beautiful frameworks like Laravel to create some fairly robust web software for the company I work for, DieselCore.  </p>",
-            enclosure: "",
-            categories: [],
-            description: "",
-            guid:"asasd1123ggfqQhf",
-            link:"",
-            pubDate:"29/02/2019",
-            thumbnail:"",
-            title:"<h1><p>Learning Javascript, barcode scanning and wiggling into private grocery store APIs</p></h1>"
-        })
-    })
-    
-  }
-
-
-  public create( data : Post){
-    this.postCollection.push(data);
-  }
-
-  getPost(id : string){
-    return this.postDoc;
-  }
-
-  delete( id: string ){
-    return (this.postCollection.filter( post=> post.id === id)[0]);
-  }
-
-  update(id : string, formData ){
-    return (this.postCollection.filter( post=> post.id === id)[0]);
-  }
 
 }
 

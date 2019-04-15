@@ -10,11 +10,9 @@ import { map } from 'rxjs/operators';
 })
 
 export class HomeComponent{
-    constructor(private post : PostService){
+    constructor(private post : PostService){}
 
-    }
-    ngOnInit(){
-    }
+    ngOnInit(){ }
 
     vm$ = combineLatest(
         this.post.mediumPosts$

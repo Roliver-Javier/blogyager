@@ -13,22 +13,12 @@ export class PostDashboardComponent implements OnInit {
   image : string = null;
   content : string;
 
-  constructor(private auth : AuthService,
-              private postService : PostService) { }
+  constructor(private auth : AuthService, private post : PostService) { }
 
   ngOnInit() {
   }
   
   createPost(){
-    const data = {
-      author : this.auth.authState.displayName || this.auth.authState.email,
-      authorId : this.auth.currentUserId,
-      content : this.content,
-      image : this.image,
-      published : new Date(),
-      title : this.title
-    };
-    //this.postService.create(data);
   }
 
 }

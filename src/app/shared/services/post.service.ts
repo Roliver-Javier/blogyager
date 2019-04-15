@@ -1,9 +1,4 @@
 import { Injectable } from '@angular/core';
-import {
-  AngularFirestore,
-  AngularFirestoreCollection,
-  AngularFirestoreDocument
-} from 'angularfire2/firestore';
 import { HttpClient } from '@angular/common/http';
 import { MediumModel } from 'src/app/shared/model/medium/MediumModel';
 import {map, switchMap, shareReplay} from 'rxjs/operators';
@@ -13,19 +8,10 @@ import { BehaviorSubject } from 'rxjs';
 @Injectable()
 export class PostService {
 
-  // postCollection: AngularFirestoreCollection<Post>;
-  // postDoc : AngularFirestoreDocument<Post>;
-
-  constructor(private afs: AngularFirestore,
-              private http: HttpClient) {
-    console.log('original PostService initializing...');
-    // this.postCollection = this.afs.collection('posts', ref =>
-    //   ref.orderBy('published', 'desc'))
-  }
-
-
   private mediumPostsBS = new BehaviorSubject<MediumPost[]>([]);
   private postDetailBS = new BehaviorSubject('');
+
+  constructor(private http: HttpClient) {}
 
   mediumPosts$ = this.mediumPostsBS.pipe(
     switchMap( ()=>this.http.get<MediumModel>('https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@roliver_javier')),
@@ -70,42 +56,6 @@ export class PostService {
     return newText + "...";
 
   }
-
-  // getPosts() : Rx.Observable<any>{ 
-  //   return new Rx.Observable( subscriber =>{
-  //     this.postCollection.snapshotChanges()
-  //     .subscribe(actions => {
-  //        const data = actions.map(a => {
-  //           const data = a.payload.doc.data() as Post
-  //           const id = a.payload.doc.id
-  //           return { id, ...data };
-  //         });
-  //       console.log(data);
-  //       subscriber.next(data);
-  //     });
-  //   });
-  // }
-
-  // getPostData(id : string){
-  //   this.postDoc = this.afs.doc<Post>(`posts/${id}`)
-  //   return this.postDoc.valueChanges();
-  // }
-
-  // public create( data : Post){
-  //   this.postCollection.add(data)
-  // }
-
-  // getPost(id : string){
-  //   return this.afs.doc<Post>(`posts/${id}`);
-  // }
-
-  // delete( id: string ){
-  //   return this.getPost(id).delete();
-  // }
-
-  // update(id : string, formData ){
-  //   return this.getPost(id).update(formData);
-  // }
 
 }
 

@@ -12,17 +12,12 @@ import { tap } from 'rxjs/internal/operators/tap';
 export class PostDetailComponent implements OnInit {
   
   
-  constructor(
-    private route : ActivatedRoute,
-    private post : PostService
-  ) { }
+  constructor( private route : ActivatedRoute, private post : PostService) { }
 
   postDetail$ = this.post.postDetail$;
 
   ngOnInit() {
-
     this.getPostDetail();
-    //this.getPost()
   }
 
   getPostDetail(){
