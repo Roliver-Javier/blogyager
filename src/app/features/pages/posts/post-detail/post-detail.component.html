@@ -1,0 +1,12 @@
+<app-navbar></app-navbar>
+
+<div *ngIf="(postDetail$ | async) as post">
+  <egg-card>
+    <ng-container class="card-title">
+        <h1>{{post.title}}</h1>
+    </ng-container>
+
+    <small class="card-author"><p>Posted by {{post.author}} &bull; {{post.pubDate}}</p></small>
+    <p class="card-content">{{ post.content}}</p>
+  </egg-card>
+</div>

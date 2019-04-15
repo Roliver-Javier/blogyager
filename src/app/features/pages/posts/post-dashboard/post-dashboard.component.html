@@ -1,0 +1,9 @@
+<mat-form-field>
+  <input matInput placeholder="post title"
+      [(ngModel)]="title">
+
+  <textarea matInput placeholder="Post Content" [(ngModel)]="content"></textarea>
+</mat-form-field>
+
+<br/>
+<button mat-raised-button color="accent" (click)="createPost()">Create Post</button>

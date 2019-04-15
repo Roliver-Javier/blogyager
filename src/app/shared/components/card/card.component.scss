@@ -1,0 +1,50 @@
+
+::ng-deep{
+    .mat-card-header-text{
+        width:80%;
+        margin:0;
+    }
+    .post-box{
+        border: 1px solid #6e737c;
+        border-bottom: 5px solid #6e737c;
+        border-right: 5px solid #6e737c;
+        font-family: 'Segoe UI';
+        margin-bottom:20px;
+    
+        .__card-header{
+            .__card-titles{
+                & :first-child[_ngcontent-c3]{
+                    color: #263238;
+                    font-size:20px;
+                }
+            }
+            .__tags{
+                word-wrap: break-word;
+                & *[_ngcontent-c3]{
+                        margin-right:5px;
+                        font-size:14px;
+                        text-decoration: none;
+                        color:rgb(49, 165, 241);
+
+                }
+            }
+        }
+
+        .__card-content{
+            padding-left:5px;
+            *[_ngcontent-c3]{
+                font-size:14px;
+                color:rgba(0, 0, 0, 0.54);
+            }
+        }
+
+        .__card-actions{
+            padding-left:10px;
+            padding-bottom:10px !important;
+            *[_ngcontent-c3]{
+                padding-right:10px;
+                
+            }
+        }
+    }
+}

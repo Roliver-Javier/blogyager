@@ -1,0 +1,27 @@
+<mat-card class="post-box">
+    <mat-card-header class="__card-header">
+        <div mat-card-avatar class="__avatar">
+            <ng-content select=".card-img"></ng-content>
+        </div>
+
+        <mat-card-title class="__card-titles">
+            <ng-content select=".card-title"></ng-content>
+        </mat-card-title>
+
+        <mat-card-subtitle>
+            <ng-content select=".card-author"></ng-content>
+        </mat-card-subtitle> 
+
+        <mat-card-subtitle class="__tags">
+            <ng-content select=".card-hashtags"></ng-content>
+        </mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content class="__card-content">
+        <ng-content select=".card-content"></ng-content>
+    </mat-card-content>
+
+    <mat-card-actions class="__card-actions">
+        <ng-content select=".card-footer"></ng-content>
+    </mat-card-actions>
+</mat-card>

@@ -1,0 +1,61 @@
+@import "../../../../assets/styles/fonts.scss";
+.egg-toolbar{
+    padding-bottom: 20px;
+    .header-sidebar-user{
+        position:relative;
+        right:0;
+    }
+
+    .header-sidebar-content{
+        min-height:90px;
+    }
+
+    .app-header-content{
+        height:200px;
+        mat-card{
+            background:none;
+            .logo{
+                padding-top:20px;
+            }
+        }
+        .title{
+            display:flex;
+            flex-direction: column;
+            align-items: flex-start;
+            color:rgb(221, 221, 221);
+            font-family: sprangledeggs;
+            font-size:2em;
+            padding-top:50px;
+            span{
+                font-size:2em;
+                outline : none;
+                border : 0;
+                cursor:pointer;
+            }
+            p{
+             padding: 5px;
+             margin-top:30px;
+            }
+         }
+    }
+    .side-menu{
+        display:flex;
+        justify-content:flex-end;
+        font-family: sprangledeggs;
+        font-size:20px;
+        width:100%;
+        &>*{
+            width:80px;
+            text-decoration: none;
+            color:#dddddd;
+            text-align:center;
+            align-self:center;
+        }
+    }
+}
+
+
+
+span{
+    cursor : pointer;
+}

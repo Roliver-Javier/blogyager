@@ -1,0 +1,18 @@
+@import '~@angular/material/theming';
+@include mat-core();
+
+$colors: (
+  primary:    #414754,
+  secondary:  #6e737c,
+  danger:     #E55B34,
+  light:      #dddddd,
+  dark:       #2B2E2E
+);
+
+$ngBlog-app-primary : mat-palette($mat-blue-grey, 900);
+$ngBlog-app-accent : mat-palette($mat-red, A200);
+$ngBlog-app-warn: mat-palette($mat-red);
+$ngBlog-app-theme: mat-light-theme($ngBlog-app-primary, $ngBlog-app-accent, $ngBlog-app-warn);
+
+@include angular-material-theme($ngBlog-app-theme);
+
