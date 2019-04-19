@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/core/auth/auth.service';
-import { PostService } from '../../../../shared/services/post.service';
+import { PostService } from '../../../../core/services/post/post.service';
 
 @Component({
   selector: 'app-post-dashboard',

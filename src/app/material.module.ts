@@ -7,6 +7,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatCardModule } from '@angular/material/card';
 import {MatGridListModule} from '@angular/material/grid-list';
+import { MatCarouselModule } from '@ngmodule/material-carousel';
 
 const importsAndExports = [
   CommonModule,
@@ -17,7 +18,8 @@ const importsAndExports = [
   MatInputModule,
   MatCardModule,
   MatGridListModule,
-  MatCardModule
+  MatCardModule,
+  MatCarouselModule
 ];
 
 @NgModule({

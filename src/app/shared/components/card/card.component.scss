@@ -20,12 +20,21 @@
             }
             .__tags{
                 word-wrap: break-word;
-                & *[_ngcontent-c3]{
+                & *[_ngcontent-c5]{
                         margin-right:5px;
                         font-size:14px;
                         text-decoration: none;
                         color:rgb(49, 165, 241);
 
+                }
+                & *[_ngcontent-c6]{
+                    list-style: none;
+                    font-size: 16px;
+                    color: #263238;
+                    font-weight:300;
+                    text-decoration: none;
+                    padding: 0;
+                    margin-top: 20px;
                 }
             }
         }
@@ -39,15 +48,13 @@
         }
 
         .post-box__footer{
-            display:flex;
-            flex-direction: column;
-
-            .__card-right-actions{
+            .__card-actions{
+                display:flex;
+                flex-direction: row;
+                justify-content: space-between;
                 padding-left:10px;
+                padding-right:10px;
                 margin-bottom:0;
-                *[_ngcontent-c3]{
-                    padding-left:10px;
-                }
             }
         }
     }

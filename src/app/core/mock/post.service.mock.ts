@@ -23,98 +23,106 @@ export class PostServiceMock{
             {
               author: "<p>Roliver Javier Rodriguez</p>",
               content: "<p> I've been a backend web developer for several years now. Swimming in the waters of databases, object oriented programming, and beautiful frameworks like Laravel to create some fairly robust web software for the company I work for, DieselCore.  </p>",
-              enclosure: null,
+              enclosure: {},
               categories: [],
               description: "",
               guid: "asasd1123ggfqQhf",
               link: "",
               pubDate: "29/02/2019",
               thumbnail: "",
-              title: "<h1><p>Learning Javascript, barcode scanning and wiggling into private grocery store APIs</p></h1>"
+              title: "<h1><p>Learning Javascript, barcode scanning and wiggling into private grocery store APIs</p></h1>",
+              type : 'medium'
             },
             {
               author: "<p>Antonia Montero</p>",
               content: "<p> I've been a backend web developer for several years now. Swimming in the waters of databases, object oriented programming, and beautiful frameworks like Laravel to create some fairly robust web software for the company I work for, DieselCore.  </p>",
-              enclosure: null,
+              enclosure: {},
               categories: [],
               description: "",
               guid: "asasd1123gg123",
               link: "",
               pubDate: "29/02/2019",
               thumbnail: "",
-              title: "<h1><p>Learning Javascript, barcode scanning and wiggling into private grocery store APIs</p></h1>"
+              title: "<h1><p>Learning Javascript, barcode scanning and wiggling into private grocery store APIs</p></h1>",
+              type : 'medium'
             },
             {
               author: "<p>Julio Sosa</p>",
               content: "<p> I've been a backend web developer for several years now. Swimming in the waters of databases, object oriented programming, and beautiful frameworks like Laravel to create some fairly robust web software for the company I work for, DieselCore.  </p>",
-              enclosure: null,
+              enclosure: {},
               categories: [],
               description: "",
               guid: "asasdfffff",
               link: "",
               pubDate: "29/02/2019",
               thumbnail: "",
-              title: "<h1><p>Learning Javascript, barcode scanning and wiggling into private grocery store APIs</p></h1>"
+              title: "<h1><p>Learning Javascript, barcode scanning and wiggling into private grocery store APIs</p></h1>",
+              type : 'medium'
             },
             {
               author: "<p>Ramon Caceres</p>",
               content: "<p> I've been a backend web developer for several years now. Swimming in the waters of databases, object oriented programming, and beautiful frameworks like Laravel to create some fairly robust web software for the company I work for, DieselCore.  </p>",
-              enclosure: null,
+              enclosure: {},
               categories: [],
               description: "",
               guid: "asasd1123ggggg",
               link: "",
               pubDate: "29/02/2019",
               thumbnail: "",
-              title: "<h1><p>Learning Javascript, barcode scanning and wiggling into private grocery store APIs</p></h1>"
+              title: "<h1><p>Learning Javascript, barcode scanning and wiggling into private grocery store APIs</p></h1>",
+              type : 'medium'
             },
             {
               author: "<p>Angela Ramirez</p>",
               content: "<p> I've been a backend web developer for several years now. Swimming in the waters of databases, object oriented programming, and beautiful frameworks like Laravel to create some fairly robust web software for the company I work for, DieselCore.  </p>",
-              enclosure: null,
+              enclosure: {},
               categories: [],
               description: "",
               guid: "asasd112bbbbf",
               link: "",
               pubDate: "29/02/2019",
               thumbnail: "",
-              title: "<h1><p>Learning Javascript, barcode scanning and wiggling into private grocery store APIs</p></h1>"
+              title: "<h1><p>Learning Javascript, barcode scanning and wiggling into private grocery store APIs</p></h1>",
+              type : 'medium'
             },
             {
               author: "<p>Miguel Santos</p>",
               content: "<p> I've been a backend web developer for several years now. Swimming in the waters of databases, object oriented programming, and beautiful frameworks like Laravel to create some fairly robust web software for the company I work for, DieselCore.  </p>",
-              enclosure: null,
+              enclosure: {},
               categories: [],
               description: "",
               guid: "asasd1hkhkk",
               link: "",
               pubDate: "29/02/2019",
               thumbnail: "",
-              title: "<h1><p>Learning Javascript, barcode scanning and wiggling into private grocery store APIs</p></h1>"
+              title: "<h1><p>Learning Javascript, barcode scanning and wiggling into private grocery store APIs</p></h1>",
+              type : 'medium'
             },
             {
               author: "<p>Rosa Mejia</p>",
               content: "<p> I've been a backend web developer for several years now. Swimming in the waters of databases, object oriented programming, and beautiful frameworks like Laravel to create some fairly robust web software for the company I work for, DieselCore.  </p>",
-              enclosure: null,
+              enclosure: {},
               categories: [],
               description: "",
               guid: "asasd1123g2342gv",
               link: "",
               pubDate: "29/02/2019",
               thumbnail: "",
-              title: "<h1><p>Learning Javascript, barcode scanning and wiggling into private grocery store APIs</p></h1>"
+              title: "<h1><p>Learning Javascript, barcode scanning and wiggling into private grocery store APIs</p></h1>",
+              type : 'medium'
             },
             {
               author: "<p>Tulio smith</p>",
               content: "<p> I've been a backend web developer for several years now. Swimming in the waters of databases, object oriented programming, and beautiful frameworks like Laravel to create some fairly robust web software for the company I work for, DieselCore.  </p>",
-              enclosure: null,
+              enclosure: {},
               categories: [],
               description: "",
               guid: "asasd1123asdasd55",
               link: "",
               pubDate: "29/02/2019",
               thumbnail: "",
-              title: "<h1><p>Learning Javascript, barcode scanning and wiggling into private grocery store APIs</p></h1>"
+              title: "<h1><p>Learning Javascript, barcode scanning and wiggling into private grocery store APIs</p></h1>",
+              type : 'medium'
             }],
           status:'ok'
         };

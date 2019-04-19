@@ -7,8 +7,6 @@ import { ShareButtonComponent } from './share-button/share-button.component';
 import { PostAvatarComponent } from './post-avatar/post-avatar.component';
 import { MaterialModule } from 'src/app/material.module';
 import { FooterComponent } from './footer/footer.component';
-import { CategoriesComponent } from '../../features/pages/categories/categories.component';
-
 
 const importsAndExports = [
     HeaderComponent, 
@@ -18,7 +16,6 @@ const importsAndExports = [
     LikeButtonComponent,
     ShareButtonComponent,
     PostAvatarComponent,
-    CategoriesComponent
 ];
 
 @NgModule({

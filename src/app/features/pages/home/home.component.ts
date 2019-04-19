@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PostService } from 'src/app/shared/services/post.service';
+import { PostService } from 'src/app/core/services/post/post.service';
 import { combineLatest } from 'rxjs';
 import { map } from 'rxjs/operators';
 

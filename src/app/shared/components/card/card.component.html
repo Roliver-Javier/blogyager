@@ -22,9 +22,12 @@
     </mat-card-content>
 
     <div class="post-box__footer">
-        <mat-card-actions class="__card-right-actions">
+        <mat-card-actions class="__card-actions">
+            <div class="action-buttons">
+                <ng-content select=".card-footer"></ng-content>
+            </div>
             <ng-content select="[from-section]"></ng-content>
-            <ng-content select=".card-footer"></ng-content>
+        
         </mat-card-actions>
     </div>
 

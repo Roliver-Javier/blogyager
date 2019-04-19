@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { PostService } from '../../../../shared/services/post.service';
+import { PostService } from '../../../../core/services/post/post.service';
 import { Post } from 'src/app/shared/model/post';
 import { tap } from 'rxjs/internal/operators/tap';
 

@@ -1,8 +1,7 @@
-import { Category } from './Category';
 
 export interface MediumPost{
     author: string;
-    categories : Category[];
+    categories : [];
     content : string;
     description : string;
     enclosure : object;
@@ -11,4 +10,5 @@ export interface MediumPost{
     pubDate : string;
     thumbnail : string;
     title : string;
+    type : string;
 }

@@ -1,0 +1,50 @@
+.wrapper {
+    position: relative;
+    img {
+      width: 70px;
+      cursor: pointer;
+      transition: transform 250ms ease;
+  
+      &:hover {
+        transform: scale(2);
+        transition: transform 250ms ease;
+      }
+    }
+  
+  }
+  
+  .like {
+    cursor: pointer;
+    &.liked {
+      font-weight: bold;
+      color: #3B5998;
+    }
+  }
+  
+  .emojis {
+    position: absolute;
+    top: -80px;
+    background: white;
+    border: 1px lightgray solid;
+    box-shadow: 0px 0px 16px 3px rgba(0,0,0,0.45);
+    border-radius: 80px;
+    display: flex;
+  }
+  
+  
+  .reactions {
+    height: 40px;
+    margin-bottom: 20px;
+  }
+  
+  .reaction-counts {
+    height: 100px;
+    display: inline;
+    float: left;
+  
+    img {
+      position: relative;
+      bottom: -10px;
+      width: 32px;
+    }
+  }
