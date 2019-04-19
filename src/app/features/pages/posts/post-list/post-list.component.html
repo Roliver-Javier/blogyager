@@ -21,11 +21,22 @@
 
     <p class="card-content">{{ post.description}}</p>
 
+    <ng-container from-section>
+        <post-avatar [title]="'Medium'"></post-avatar>
+     </ng-container>
+     
     <ng-container class="card-footer">
         <like-button></like-button>
         <share-button></share-button>
     </ng-container>
+
+    
+
+    
+
+    
     
   </egg-card>
 </div>
 </article>
+

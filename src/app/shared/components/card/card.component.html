@@ -10,7 +10,7 @@
 
         <mat-card-subtitle>
             <ng-content select=".card-author"></ng-content>
-        </mat-card-subtitle> 
+        </mat-card-subtitle>
 
         <mat-card-subtitle class="__tags">
             <ng-content select=".card-hashtags"></ng-content>
@@ -21,7 +21,11 @@
         <ng-content select=".card-content"></ng-content>
     </mat-card-content>
 
-    <mat-card-actions class="__card-actions">
-        <ng-content select=".card-footer"></ng-content>
-    </mat-card-actions>
+    <div class="post-box__footer">
+        <mat-card-actions class="__card-right-actions">
+            <ng-content select="[from-section]"></ng-content>
+            <ng-content select=".card-footer"></ng-content>
+        </mat-card-actions>
+    </div>
+
 </mat-card>

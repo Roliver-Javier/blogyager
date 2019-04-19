@@ -5,7 +5,7 @@ export interface MediumPost{
     categories : Category[];
     content : string;
     description : string;
-    enclosure : Object;
+    enclosure : object;
     guid : string;
     link : string;
     pubDate : string;

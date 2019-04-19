@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { PostService } from 'src/app/shared/services/post.service';
 import { combineLatest } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -9,10 +9,20 @@ import { map } from 'rxjs/operators';
     styleUrls:['./home.component.scss']
 })
 
-export class HomeComponent{
+export class HomeComponent implements OnInit{ 
     constructor(private post : PostService){}
-
-    ngOnInit(){ }
+   
+    matVersion: string = '5.1.0';
+    breakpoint: number;
+ 
+    ngOnInit() {
+    this.breakpoint = (window.innerWidth <= 400) ? 1 : 6;
+    }
+  
+    onResize(event) {
+        this.breakpoint = (event.target.innerWidth <= 400) ? 1 : 6;
+    }
+    
 
     vm$ = combineLatest(
         this.post.mediumPosts$

@@ -14,7 +14,7 @@ import { MockService } from './core/mock/mock.service';
 import { FeaturesModule } from './features/features.module';
 import { AppRoutingModule } from './app.routing';
 import { HttpClientModule } from '@angular/common/http';
-
+import { FlexLayoutModule  } from '@angular/flex-layout';
 
 const Imports = [
   AngularFireAuthModule,
@@ -27,7 +27,8 @@ const Imports = [
   FeaturesModule,
   AppRoutingModule,
   BrowserAnimationsModule,
-  HttpClientModule
+  HttpClientModule,
+  FlexLayoutModule
 ];
 
 @NgModule({

@@ -11,12 +11,16 @@
     }
 
     .app-header-content{
-        height:200px;
+        padding-top:5%;
+        padding-bottom:5%;
+        .logo{
+            padding-top:20px;
+            background: none;
+            border: none;
+            box-shadow: none;
+        }
         mat-card{
             background:none;
-            .logo{
-                padding-top:20px;
-            }
         }
         .title{
             display:flex;
@@ -42,8 +46,8 @@
         display:flex;
         justify-content:flex-end;
         font-family: sprangledeggs;
-        font-size:20px;
-        width:100%;
+        font-size:30px;
+        width:95%;
         &>*{
             width:80px;
             text-decoration: none;

@@ -16,7 +16,8 @@ const importsAndExports = [
   MatExpansionModule,
   MatInputModule,
   MatCardModule,
-  MatGridListModule
+  MatGridListModule,
+  MatCardModule
 ];
 
 @NgModule({

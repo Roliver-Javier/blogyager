@@ -5,13 +5,14 @@ import { MaterialModule } from '../material.module';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { SharedComponentsModule } from './components/shared-components.module';
-
+import { FlexLayoutModule  } from '@angular/flex-layout';
 const importsAndExports = [
   CommonModule,
   MaterialModule,
   RouterModule,
   FormsModule,
-  SharedComponentsModule
+  SharedComponentsModule,
+  FlexLayoutModule
 ];
 @NgModule({
   declarations: [],

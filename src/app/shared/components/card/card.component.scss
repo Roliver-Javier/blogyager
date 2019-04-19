@@ -38,12 +38,16 @@
             }
         }
 
-        .__card-actions{
-            padding-left:10px;
-            padding-bottom:10px !important;
-            *[_ngcontent-c3]{
-                padding-right:10px;
-                
+        .post-box__footer{
+            display:flex;
+            flex-direction: column;
+
+            .__card-right-actions{
+                padding-left:10px;
+                margin-bottom:0;
+                *[_ngcontent-c3]{
+                    padding-left:10px;
+                }
             }
         }
     }

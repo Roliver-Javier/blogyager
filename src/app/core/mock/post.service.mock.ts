@@ -23,7 +23,7 @@ export class PostServiceMock{
             {
               author: "<p>Roliver Javier Rodriguez</p>",
               content: "<p> I've been a backend web developer for several years now. Swimming in the waters of databases, object oriented programming, and beautiful frameworks like Laravel to create some fairly robust web software for the company I work for, DieselCore.  </p>",
-              enclosure: "",
+              enclosure: null,
               categories: [],
               description: "",
               guid: "asasd1123ggfqQhf",
@@ -35,7 +35,7 @@ export class PostServiceMock{
             {
               author: "<p>Antonia Montero</p>",
               content: "<p> I've been a backend web developer for several years now. Swimming in the waters of databases, object oriented programming, and beautiful frameworks like Laravel to create some fairly robust web software for the company I work for, DieselCore.  </p>",
-              enclosure: "",
+              enclosure: null,
               categories: [],
               description: "",
               guid: "asasd1123gg123",
@@ -47,7 +47,7 @@ export class PostServiceMock{
             {
               author: "<p>Julio Sosa</p>",
               content: "<p> I've been a backend web developer for several years now. Swimming in the waters of databases, object oriented programming, and beautiful frameworks like Laravel to create some fairly robust web software for the company I work for, DieselCore.  </p>",
-              enclosure: "",
+              enclosure: null,
               categories: [],
               description: "",
               guid: "asasdfffff",
@@ -59,7 +59,7 @@ export class PostServiceMock{
             {
               author: "<p>Ramon Caceres</p>",
               content: "<p> I've been a backend web developer for several years now. Swimming in the waters of databases, object oriented programming, and beautiful frameworks like Laravel to create some fairly robust web software for the company I work for, DieselCore.  </p>",
-              enclosure: "",
+              enclosure: null,
               categories: [],
               description: "",
               guid: "asasd1123ggggg",
@@ -71,7 +71,7 @@ export class PostServiceMock{
             {
               author: "<p>Angela Ramirez</p>",
               content: "<p> I've been a backend web developer for several years now. Swimming in the waters of databases, object oriented programming, and beautiful frameworks like Laravel to create some fairly robust web software for the company I work for, DieselCore.  </p>",
-              enclosure: "",
+              enclosure: null,
               categories: [],
               description: "",
               guid: "asasd112bbbbf",
@@ -83,7 +83,7 @@ export class PostServiceMock{
             {
               author: "<p>Miguel Santos</p>",
               content: "<p> I've been a backend web developer for several years now. Swimming in the waters of databases, object oriented programming, and beautiful frameworks like Laravel to create some fairly robust web software for the company I work for, DieselCore.  </p>",
-              enclosure: "",
+              enclosure: null,
               categories: [],
               description: "",
               guid: "asasd1hkhkk",
@@ -95,7 +95,7 @@ export class PostServiceMock{
             {
               author: "<p>Rosa Mejia</p>",
               content: "<p> I've been a backend web developer for several years now. Swimming in the waters of databases, object oriented programming, and beautiful frameworks like Laravel to create some fairly robust web software for the company I work for, DieselCore.  </p>",
-              enclosure: "",
+              enclosure: null,
               categories: [],
               description: "",
               guid: "asasd1123g2342gv",
@@ -107,7 +107,7 @@ export class PostServiceMock{
             {
               author: "<p>Tulio smith</p>",
               content: "<p> I've been a backend web developer for several years now. Swimming in the waters of databases, object oriented programming, and beautiful frameworks like Laravel to create some fairly robust web software for the company I work for, DieselCore.  </p>",
-              enclosure: "",
+              enclosure: null,
               categories: [],
               description: "",
               guid: "asasd1123asdasd55",
