@@ -1,37 +1,36 @@
-
 <article>
-<div *ngFor="let post of vm.mediumPosts">
-  <egg-card>
-  
-    <section class="card-img">
-      <img width="40" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-    </section>
+  <div *ngFor="let post of vm.postBlog">
+    <egg-card>
 
-    <ng-container class="card-title">
-        <p routerLink="/post/{{post.guid}}">{{post.title}}</p>
-    </ng-container>
-    
-    <small class="card-author">{{post.author}} -  {{post.pubDate}}</small>
- 
-    <ng-container class="card-hashtags">
+      <section class="card-img">
+        <img width="40" alt="Angular Logo"
+          src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+      </section>
+
+      <ng-container class="card-title">
+        <p routerLink="/post/{{post.id}}">{{post.title}}</p>
+      </ng-container>
+
+      <small class="card-author">{{post.author}} - {{post.published}}</small>
+
+      <ng-container class="card-hashtags">
         <a href="#">#angular</a>
         <a href="#">#angularDominicana</a>
         <a href="#">#angularCommunity</a>
-    </ng-container>
+      </ng-container>
 
-    <p class="card-content">{{ post.description}}</p>
+      <p class="card-content">{{ post.description}}</p>
 
-    <ng-container from-section>
+      <ng-container from-section>
         <post-avatar [title]="'Medium'"></post-avatar>
-     </ng-container>
-    
-    <ng-container class="card-footer">
-        
+      </ng-container>
+
+      <ng-container class="card-footer">
+
         <like-button></like-button>
         <share-button></share-button>
-    </ng-container>
-    
-  </egg-card>
-</div>
-</article>
+      </ng-container>
 
+    </egg-card>
+  </div>
+</article>

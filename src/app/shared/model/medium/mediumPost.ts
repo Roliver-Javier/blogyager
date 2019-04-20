@@ -1,3 +1,4 @@
+import { PostType } from '../../enums/post-type.enum';
 
 export interface MediumPost{
     author: string;
@@ -10,5 +11,5 @@ export interface MediumPost{
     pubDate : string;
     thumbnail : string;
     title : string;
-    type : string;
+    type : PostType;
 }

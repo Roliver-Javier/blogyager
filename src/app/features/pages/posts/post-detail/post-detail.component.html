@@ -1,6 +1,6 @@
 <app-navbar></app-navbar>
 
-<div *ngIf="(postDetail$ | async) as post">
+<div class="post-detail__container" *ngIf="(postDetail$ | async) as post">
   <egg-card>
     <ng-container class="card-title">
         <h1>{{post.title}}</h1>

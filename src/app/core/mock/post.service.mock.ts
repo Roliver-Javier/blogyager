@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Observable, BehaviorSubject } from 'rxjs';
-import { Post } from 'src/app/shared/model/post';
 import { MediumModel } from 'src/app/shared/model/medium/MediumModel';
 import { MediumPost } from 'src/app/shared/model/medium/mediumPost';
 import {map, switchMap, shareReplay} from 'rxjs/operators';
+import { PostType } from 'src/app/shared/enums/post-type.enum';
 
 @Injectable()
 export class PostServiceMock{
@@ -31,7 +31,7 @@ export class PostServiceMock{
               pubDate: "29/02/2019",
               thumbnail: "",
               title: "<h1><p>Learning Javascript, barcode scanning and wiggling into private grocery store APIs</p></h1>",
-              type : 'medium'
+              type : PostType.MEDIUM_POST
             },
             {
               author: "<p>Antonia Montero</p>",
@@ -44,7 +44,7 @@ export class PostServiceMock{
               pubDate: "29/02/2019",
               thumbnail: "",
               title: "<h1><p>Learning Javascript, barcode scanning and wiggling into private grocery store APIs</p></h1>",
-              type : 'medium'
+              type : PostType.MEDIUM_POST
             },
             {
               author: "<p>Julio Sosa</p>",
@@ -57,7 +57,7 @@ export class PostServiceMock{
               pubDate: "29/02/2019",
               thumbnail: "",
               title: "<h1><p>Learning Javascript, barcode scanning and wiggling into private grocery store APIs</p></h1>",
-              type : 'medium'
+              type : PostType.MEDIUM_POST
             },
             {
               author: "<p>Ramon Caceres</p>",
@@ -70,7 +70,7 @@ export class PostServiceMock{
               pubDate: "29/02/2019",
               thumbnail: "",
               title: "<h1><p>Learning Javascript, barcode scanning and wiggling into private grocery store APIs</p></h1>",
-              type : 'medium'
+              type : PostType.MEDIUM_POST
             },
             {
               author: "<p>Angela Ramirez</p>",
@@ -83,7 +83,7 @@ export class PostServiceMock{
               pubDate: "29/02/2019",
               thumbnail: "",
               title: "<h1><p>Learning Javascript, barcode scanning and wiggling into private grocery store APIs</p></h1>",
-              type : 'medium'
+              type : PostType.MEDIUM_POST
             },
             {
               author: "<p>Miguel Santos</p>",
@@ -96,7 +96,7 @@ export class PostServiceMock{
               pubDate: "29/02/2019",
               thumbnail: "",
               title: "<h1><p>Learning Javascript, barcode scanning and wiggling into private grocery store APIs</p></h1>",
-              type : 'medium'
+              type : PostType.MEDIUM_POST
             },
             {
               author: "<p>Rosa Mejia</p>",
@@ -109,7 +109,7 @@ export class PostServiceMock{
               pubDate: "29/02/2019",
               thumbnail: "",
               title: "<h1><p>Learning Javascript, barcode scanning and wiggling into private grocery store APIs</p></h1>",
-              type : 'medium'
+              type : PostType.MEDIUM_POST
             },
             {
               author: "<p>Tulio smith</p>",
@@ -122,7 +122,7 @@ export class PostServiceMock{
               pubDate: "29/02/2019",
               thumbnail: "",
               title: "<h1><p>Learning Javascript, barcode scanning and wiggling into private grocery store APIs</p></h1>",
-              type : 'medium'
+              type : PostType.MEDIUM_POST
             }],
           status:'ok'
         };

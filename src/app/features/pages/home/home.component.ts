@@ -25,10 +25,10 @@ export class HomeComponent implements OnInit{
     
 
     vm$ = combineLatest(
-        this.post.mediumPosts$
+        this.post.postBlog$
     ).pipe(
-        map( ([mediumPosts])=>({
-            mediumPosts
+        map( ([postBlog])=>({
+            postBlog
         }))
     );
     

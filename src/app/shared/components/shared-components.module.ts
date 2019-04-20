@@ -7,6 +7,7 @@ import { ShareButtonComponent } from './share-button/share-button.component';
 import { PostAvatarComponent } from './post-avatar/post-avatar.component';
 import { MaterialModule } from 'src/app/material.module';
 import { FooterComponent } from './footer/footer.component';
+import { PagesRoutingModule } from 'src/app/features/pages/pages.routing';
 
 const importsAndExports = [
     HeaderComponent, 
@@ -19,7 +20,7 @@ const importsAndExports = [
 ];
 
 @NgModule({
-    imports:[MaterialModule],
+    imports:[MaterialModule, PagesRoutingModule],
     exports: [...importsAndExports],
     declarations:[...importsAndExports]
 })

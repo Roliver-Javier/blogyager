@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { PostService } from 'src/app/core/services/post/post.service';
+import { zip } from 'rxjs';
 
 @Component({
   selector: 'app-post-list',
@@ -8,12 +9,19 @@ import { PostService } from 'src/app/core/services/post/post.service';
 })
 export class PostListComponent{
 
-  @Input() vm : {};
-
-  ngOnInit(){ 
-  }
+  @Input() vm : any;
 
   constructor(private post : PostService) { }
 
+  ngOnInit(){ 
+  
+    this.show();
+  }
 
+  show(){
+    this.post.getCatcodePost();
+    this.post.postBlog$.subscribe(data=>{
+      console.log(data);
+    })
+  }
 }
