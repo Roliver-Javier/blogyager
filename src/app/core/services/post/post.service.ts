@@ -7,6 +7,7 @@ import { AngularFirestore } from 'angularfire2/firestore';
 import { Post } from 'src/app/shared/model/post';
 import { MediumModel } from 'src/app/shared/model/medium/MediumModel';
 import { PostType } from 'src/app/shared/enums/post-type.enum';
+import { reaction } from 'src/app/shared/model/reaction';
 
 @Injectable()
 export class PostService {
@@ -30,7 +31,8 @@ export class PostService {
               published: postVendor.pubDate,
               title: postVendor.title,
               image: postVendor.thumbnail,
-              description: postVendor.description
+              description: postVendor.description,
+              reactions:[]
             };
             this.createPostToFirebase(post);
         }
@@ -94,9 +96,19 @@ export class PostService {
     return newText + "...";
   }
 
-  private createPostToFirebase(post){
+  private createPostToFirebase(post : Post){
     this.afire.doc(`/posts/${post.id}`).set({...post}, {merge : true});
+
+    const reaction : reaction = {
+       like: 0,
+       love: 0,
+       sad : 0,
+       wow : 0
+    };
+    this.afire.doc(`/reactions/${post.id}`).set({...reaction}, {merge:true});
   } 
+
+  
 
 }
 

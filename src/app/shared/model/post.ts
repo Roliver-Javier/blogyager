@@ -1,3 +1,5 @@
+import { reaction } from './reaction';
+
 export class Post {
     id? : string
     title : string
@@ -6,4 +8,5 @@ export class Post {
     description: string
     image : string
     published : string
+    reactions: reaction[]
 }
