@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, Input } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input, ViewChild, TemplateRef } from '@angular/core';
 import { ReactionService } from 'src/app/core/services/reaction/reaction.service';
 
 @Component({
@@ -7,37 +7,33 @@ import { ReactionService } from 'src/app/core/services/reaction/reaction.service
     styleUrls:['./reaction.component.scss']
 })
 
-export class ReactionComponent implements OnInit, OnDestroy{
+export class ReactionComponent implements OnInit{
     
-    @Input() itemId : string;
-
+    @Input() postId : string;
     showEmojis = false;
     emojiList : string [];
-    reactionCount : any;
     userReaction : any;
-    subscription : any;
-
+    subscription$ : any;
+    isReactionSelected : boolean = false;
+    
     constructor(private reactionSvc : ReactionService){
         
     }
 
+    templateToShow;
+
     ngOnInit(){
         this.emojiList = this.reactionSvc.emojiList;
-
-        this.subscription = this.reactionSvc.getReactions(this.itemId)
-        .subscribe(( reactions )=>{
-            this.reactionCount = this.reactionSvc.countReactions(reactions);
-            // this.userReaction = this.reactionSvc.updateReaction(reactions);
-            
-        });
+        console.log(this.postId);
+        this.subscription$ = this.reactionSvc.getReactions(this.postId);
+        
     }
 
-    react( val ){
-        if (this.userReaction === val){
-            this.reactionSvc.removeReaction(this.itemId);
-        }else{
-           this.reactionSvc.updateReaction(this.itemId, val);
-        }
+    react(reactions, val ){
+        const selectedReaction = this.emojiList[val];
+        reactions[selectedReaction]++;
+        this.reactionSvc.updateReaction(this.postId, reactions);
+        this.isReactionSelected = this.hasReactions(reactions,selectedReaction);
     }
 
     toggleShow(){
@@ -48,11 +44,9 @@ export class ReactionComponent implements OnInit, OnDestroy{
         return `assets/reactions/${emoji}.svg`;
     }
 
-    hasReactions(index){
-        return true;
-    }
-
-    ngOnDestroy(){
-        this.subscription.unsubscribe();
+    hasReactions(reactions, emoji?){
+        if(emoji)
+            return reactions[ emoji ] > 0;
+        return Object.values(reactions).every(x=> (x !==0));
     }
 }

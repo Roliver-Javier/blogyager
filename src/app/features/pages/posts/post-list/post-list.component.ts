@@ -14,14 +14,6 @@ export class PostListComponent{
   constructor(private post : PostService) { }
 
   ngOnInit(){ 
-  
-    this.show();
-  }
-
-  show(){
     this.post.getCatcodePost();
-    this.post.postBlog$.subscribe(data=>{
-      console.log(data);
-    })
   }
 }
