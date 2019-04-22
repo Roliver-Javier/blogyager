@@ -105,7 +105,12 @@ export class PostService {
        sad : 0,
        wow : 0
     };
-    this.afire.doc(`/reactions/${post.id}`).set({...reaction}, {merge:true});
+    const reactionRef = this.afire.collection('reactions').doc(post.id);
+    reactionRef.get().subscribe((docSnapshot)=>{
+      if(!docSnapshot.exists){
+          reactionRef.set({...reaction});
+      }
+    })
   } 
 
   

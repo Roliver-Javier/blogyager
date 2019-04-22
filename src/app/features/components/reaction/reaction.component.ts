@@ -24,9 +24,7 @@ export class ReactionComponent implements OnInit{
 
     ngOnInit(){
         this.emojiList = this.reactionSvc.emojiList;
-        console.log(this.postId);
         this.subscription$ = this.reactionSvc.getReactions(this.postId);
-        
     }
 
     react(reactions, val ){
@@ -34,6 +32,7 @@ export class ReactionComponent implements OnInit{
         reactions[selectedReaction]++;
         this.reactionSvc.updateReaction(this.postId, reactions);
         this.isReactionSelected = this.hasReactions(reactions,selectedReaction);
+        console.log(this.isReactionSelected);
     }
 
     toggleShow(){
@@ -44,9 +43,10 @@ export class ReactionComponent implements OnInit{
         return `assets/reactions/${emoji}.svg`;
     }
 
+    hasNoReactions(reactions){
+        return Object.values(reactions).every(x=> (x ===0));
+    }
     hasReactions(reactions, emoji?){
-        if(emoji)
-            return reactions[ emoji ] > 0;
-        return Object.values(reactions).every(x=> (x !==0));
+        return reactions[ emoji ] > 0;
     }
 }
