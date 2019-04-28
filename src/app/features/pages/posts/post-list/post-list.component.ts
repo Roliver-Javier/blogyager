@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
 import { PostService } from 'src/app/core/services/post/post.service';
-import { zip } from 'rxjs';
 
 @Component({
   selector: 'app-post-list',

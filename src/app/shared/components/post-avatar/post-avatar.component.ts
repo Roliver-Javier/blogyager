@@ -13,17 +13,17 @@ import { Component, Input } from '@angular/core';
     styles:[`
 
         .post-avatar__container{
-            padding-left:10px;
-            padding-bottom:10px;
+            text-align:center;
         }
         .post-avatar__row{
             display:flex;
-            flex-direction: row;
-            
+            flex-direction: column;
+            align-items:center;
+            padding-top: 5px;
         }
         p.post-avatar__title{
-            padding-top:5px;
             padding-left:5px;
+            padding-top: 5px;
         }
     `]
 })

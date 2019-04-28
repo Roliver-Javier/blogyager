@@ -8,6 +8,7 @@ import { PostDashboardComponent } from './posts/post-dashboard/post-dashboard.co
 import { PostListComponent } from './posts/post-list/post-list.component';
 import { FeaturesComponentsModule } from '../components/featuresComponents.module';
 import { ReactionService } from 'src/app/core/services/reaction/reaction.service';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 const components = [
     HomeComponent,
@@ -22,7 +23,7 @@ const providers = [
 ];
 
 @NgModule({
-    imports:[ PagesRoutingModule, FeaturesComponentsModule,  SharedModule],
+    imports:[ PagesRoutingModule, FlexLayoutModule, FeaturesComponentsModule,  SharedModule],
     exports:[components],
     declarations:[components],
     providers:[...providers]

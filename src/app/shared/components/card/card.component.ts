@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { CardType } from '../../enums/card-type.enum';
 
 @Component({
     selector:'egg-card',

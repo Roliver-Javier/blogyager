@@ -1,12 +1,35 @@
 <app-navbar></app-navbar>
 
-<div class="post-detail__container" *ngIf="(postDetail$ | async) as post">
-  <egg-card>
-    <ng-container class="card-title">
-        <h1>{{post.title}}</h1>
-    </ng-container>
+<div class="post-detail__container" 
+     fxLayoutAlign="center" 
+     fxLayout.lt-sm="column"
+     fxLayout="row wrap" 
+     fxLayoutGap="32px" 
+     *ngIf="(postDetail$ | async) as post">
 
-    <small class="card-author"><p>Posted by {{post.author}} &bull; {{post.pubDate}}</p></small>
-    <p class="card-content">{{ post.content}}</p>
-  </egg-card>
+    <egg-card
+       fxFlex="0 1 50%" 
+       fxFlex.lt-md="0 1 50%" 
+       fxFlex.lt-sm="100%"
+    >
+      <div class="card-title">
+        <p>{{post.title}}</p>
+      </div>
+
+      <div class="card-author">
+        <small>Posted by {{post.author}} &bull; {{post.pubDate}}</small>
+      </div>
+
+      <div class="card-content" [innerHTML]="post.content"></div>
+
+    </egg-card>
+    
+    <div 
+      fxFlex="0 1 20%" 
+      fxFlex.lt-md="0 1 20%" 
+      fxFlex.lt-sm="100%">
+      <mini-profile [author]="post.feed"></mini-profile>
+      <app-categories></app-categories>
+      <app-challenges></app-challenges>
+    </div>
 </div>

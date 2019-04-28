@@ -6,7 +6,10 @@ export class Post {
     author : string
     content : string
     description: string
-    image : string
+    thumbnail : string
     published : string
     reactions: reaction[]
+    categories : []
+    feed : object
+    
 }

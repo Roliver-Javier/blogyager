@@ -14,6 +14,12 @@ export const environment = {
   }
 };
 
+export const path = {
+    baseUrl : {//@roliver_javier @johnbwashington @benlesh
+      medium : 'https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@roliver_javier'
+    }
+}
+
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.

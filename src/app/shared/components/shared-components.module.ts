@@ -8,6 +8,7 @@ import { PostAvatarComponent } from './post-avatar/post-avatar.component';
 import { MaterialModule } from 'src/app/material.module';
 import { FooterComponent } from './footer/footer.component';
 import { PagesRoutingModule } from 'src/app/features/pages/pages.routing';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 const importsAndExports = [
     HeaderComponent, 
@@ -20,7 +21,7 @@ const importsAndExports = [
 ];
 
 @NgModule({
-    imports:[MaterialModule, PagesRoutingModule],
+    imports:[MaterialModule,FlexLayoutModule, PagesRoutingModule],
     exports: [...importsAndExports],
     declarations:[...importsAndExports]
 })
