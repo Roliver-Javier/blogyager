@@ -1,52 +1,52 @@
 import { Component, OnInit, OnDestroy, Input, ViewChild, TemplateRef } from '@angular/core';
 import { ReactionService } from 'src/app/core/services/reaction/reaction.service';
+import { state, transition, style, trigger, animate } from '@angular/animations';
 
 @Component({
-    selector:'reaction',
-    templateUrl:'./reaction.component.html',
-    styleUrls:['./reaction.component.scss']
+    selector: 'reaction',
+    templateUrl: './reaction.component.html',
+    styleUrls: ['./reaction.component.scss']
 })
 
-export class ReactionComponent implements OnInit{
-    
-    @Input() postId : string;
+export class ReactionComponent implements OnInit {
+
+    @Input() postId: string;
     showEmojis = false;
-    emojiList : string [];
-    userReaction : any;
-    subscription$ : any;
-    isReactionSelected : boolean = false;
-    
-    constructor(private reactionSvc : ReactionService){
-        
+    emojiList: string[];
+    userReaction: any;
+    subscription$: any;
+    isReactionSelected: boolean = false;
+
+    constructor(private reactionSvc: ReactionService) {
+
     }
 
     templateToShow;
 
-    ngOnInit(){
+    ngOnInit() {
         this.emojiList = this.reactionSvc.emojiList;
-        console.log(this.postId);
         this.subscription$ = this.reactionSvc.getReactions(this.postId);
-        
     }
 
-    react(reactions, val ){
+    react(reactions, val) {
         const selectedReaction = this.emojiList[val];
         reactions[selectedReaction]++;
         this.reactionSvc.updateReaction(this.postId, reactions);
-        this.isReactionSelected = this.hasReactions(reactions,selectedReaction);
+        this.isReactionSelected = this.hasReactions(reactions, selectedReaction);
     }
 
-    toggleShow(){
+    toggleShow() {
         this.showEmojis = !this.showEmojis;
     }
 
-    emojiPath(emoji){
+    emojiPath(emoji) {
         return `assets/reactions/${emoji}.svg`;
     }
 
-    hasReactions(reactions, emoji?){
-        if(emoji)
-            return reactions[ emoji ] > 0;
-        return Object.values(reactions).every(x=> (x !==0));
+    hasNoReactions(reactions) {
+        return Object.values(reactions).every(x => (x === 0));
+    }
+    hasReactions(reactions, emoji?) {
+        return reactions[emoji] > 0;
     }
 }

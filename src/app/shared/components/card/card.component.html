@@ -1,14 +1,12 @@
 <mat-card class="post-box">
     <mat-card-header class="__card-header">
-        <div mat-card-avatar class="__avatar">
-            <ng-content select=".card-img"></ng-content>
-        </div>
-
+        
         <mat-card-title class="__card-titles">
+            <ng-content select=".card-thumbnail"></ng-content>
             <ng-content select=".card-title"></ng-content>
         </mat-card-title>
 
-        <mat-card-subtitle>
+        <mat-card-subtitle class="__card-author">
             <ng-content select=".card-author"></ng-content>
         </mat-card-subtitle>
 
@@ -17,17 +15,15 @@
         </mat-card-subtitle>
     </mat-card-header>
 
+
+
     <mat-card-content class="__card-content">
-        <ng-content select=".card-content"></ng-content>
+        <ng-content select=".card-content" class="post-item"></ng-content>
     </mat-card-content>
 
     <div class="post-box__footer">
         <mat-card-actions class="__card-actions">
-            <div class="action-buttons">
-                <ng-content select=".card-footer"></ng-content>
-            </div>
-            <ng-content select="[from-section]"></ng-content>
-        
+            <ng-content select=".card-footer"></ng-content>
         </mat-card-actions>
     </div>
 

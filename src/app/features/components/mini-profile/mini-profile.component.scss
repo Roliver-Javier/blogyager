@@ -1,0 +1,37 @@
+
+.miniprofile__content{
+    .author{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        p{
+            font-size:1.5em;
+        }
+        small{
+            font-weight: normal;
+        }
+    }
+    
+    .detail{
+        display:flex;
+        flex-direction: column;
+        .avatar{
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom:20px;
+            .circle-avatar{
+                width:150px;
+                height:150px;
+                border-radius: 50%;
+            }
+        }
+        .detail__item{
+            span{
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+

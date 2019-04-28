@@ -7,15 +7,24 @@
      fxLayout="row wrap"
      fxLayoutGap="32px">
     
+     <div 
+     fxFlex="0 1 calc(25% - 32px)"
+     fxFlex.lt-md="0 1 calc(25% - 32px)"
+     fxFlex.lt-sm="100%"
+     class="features-container">
+     <app-categories></app-categories>
+     <app-challenges></app-challenges>
+ </div>   
+
      <app-post-list 
-        fxFlex="0 1 calc(70% - 32px)" 
-        fxFlex.lt-md="0 1 calc(70% - 32px)"
+        fxFlex="0 1 calc(50% - 32px)" 
+        fxFlex.lt-md="0 1 calc(50% - 32px)"
         fxFlex.lt-sm="100%"
         [vm]="vm"></app-post-list>
     
     <div 
-        fxFlex="0 1 calc(30% - 32px)"
-        fxFlex.lt-md="0 1 calc(30% - 32px)"
+        fxFlex="0 1 calc(25% - 32px)"
+        fxFlex.lt-md="0 1 calc(25% - 32px)"
         fxFlex.lt-sm="100%"
         class="features-container">
         <app-categories></app-categories>

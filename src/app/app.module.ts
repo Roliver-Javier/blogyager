@@ -9,7 +9,6 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MockService } from './core/mock/mock.service';
 import { FeaturesModule } from './features/features.module';
 import { AppRoutingModule } from './app.routing';
@@ -26,7 +25,6 @@ const Imports = [
   BrowserModule,
   FeaturesModule,
   AppRoutingModule,
-  BrowserAnimationsModule,
   HttpClientModule,
   FlexLayoutModule
 ];

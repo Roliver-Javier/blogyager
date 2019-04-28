@@ -6,19 +6,19 @@
             </span>
 
         </div>
-        <div *ngIf="!isReactionSelected">
+        <div *ngIf="hasNoReactions(reactions)">
             <div class="reaction.counts">
                 <span>
                     <img [src]="emojiPath(emojiList[0])" />
                 </span>
             </div>
         </div>
-        
-        <div class="reactions" *ngIf="isReactionSelected">
+        <div class="reactions" *ngIf="!hasNoReactions(reactions) || isReactionSelected">
             <div *ngFor="let emoji of emojiList; index as i;" class="reaction.counts">
-                <span *ngIf="hasReactions(reactions, emoji)">
-                    <img [src]="emojiPath(emoji)" />{{ reactions[emoji]}}
-                </span>
+                <div class="emoji__content" *ngIf="hasReactions(reactions, emoji)">
+                    <img [src]="emojiPath(emoji)" />
+                    <small>{{ reactions[emoji]}}</small>
+                </div>
             </div>
         </div> 
 

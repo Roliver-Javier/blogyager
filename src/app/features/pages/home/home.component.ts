@@ -22,12 +22,11 @@ export class HomeComponent implements OnInit{
     onResize(event) {
         this.breakpoint = (event.target.innerWidth <= 400) ? 1 : 6;
     }
-    
 
     vm$ = combineLatest(
         this.post.postBlog$
     ).pipe(
-        map( ([postBlog])=>({
+        map( ([postBlog ])=>({
             postBlog
         }))
     );
