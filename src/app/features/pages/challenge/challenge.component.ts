@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { PostService } from 'src/app/core/services/post/post.service';
+import { ChallengeService } from 'src/app/core/services/challenge.service';
+import { PostService } from 'src/app/core/services/post.service';
 
 @Component({
     selector:'challenger-page',
@@ -8,6 +9,9 @@ import { PostService } from 'src/app/core/services/post/post.service';
 })
 export class ChallengePageComponent{
     
-    constructor(private post : PostService){}
+    constructor(private post : PostService,
+                private challenge : ChallengeService){}
+
+    
     
 }

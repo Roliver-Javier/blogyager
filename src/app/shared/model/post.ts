@@ -9,7 +9,7 @@ export class Post {
     thumbnail : string
     published : string
     reactions: reaction[]
-    categories : []
+    categories : string[]
     feed : object
     
 }

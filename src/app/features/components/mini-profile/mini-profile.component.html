@@ -1,8 +1,8 @@
 <article class="miniprofile__content">
-    <egg-card>
+    <egg-card>src/app/core/services/post.service
         <ng-container class="card-title">
             <div class="author">
-                <p>Frosty</p>
+                <p>{{author}}</p>
                 <small>@aaronfrost</small>
 
             </div>
@@ -11,7 +11,7 @@
 
             <div class="detail">
                 <div class="avatar">
-                    <img class="circle-avatar" [src]="author.image" />
+                    <img class="circle-avatar" [src]="feed.image" />
                 </div>
                 <div class="detail__item">
                     <span>Work</span>

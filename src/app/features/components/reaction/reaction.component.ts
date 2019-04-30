@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy, Input, ViewChild, TemplateRef } from '@angular/core';
-import { ReactionService } from 'src/app/core/services/reaction/reaction.service';
+import { ReactionService } from 'src/app/core/services/reaction.service';
 import { state, transition, style, trigger, animate } from '@angular/animations';
 
 @Component({

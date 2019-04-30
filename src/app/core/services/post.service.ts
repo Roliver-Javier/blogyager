@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnDestroy } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map, switchMap, mergeAll } from 'rxjs/operators';
 import { BehaviorSubject, zip, of } from 'rxjs';
@@ -6,18 +6,25 @@ import { AngularFirestore } from 'angularfire2/firestore';
 import { Post } from 'src/app/shared/model/post';
 import { MediumModel } from 'src/app/shared/model/medium/MediumModel';
 import { PostType } from 'src/app/shared/enums/post-type.enum';
-import { reaction } from 'src/app/shared/model/reaction';
-import { path } from '../../environments/environment';
+import { reaction } from 'src/app/shared/model/reaction';import { path } from '../environments/environment';
 
 @Injectable()
-export class PostService {
+export class PostService implements OnDestroy{
+  
 
   private mediumPostsBS = new BehaviorSubject<boolean>(false);
   private postDetailBS = new BehaviorSubject('');
   private postBlogBS = new BehaviorSubject<any[]>([]);
   private currentAuthor : object;
+  private reactionsBS = new BehaviorSubject<string>('');
+  private reactionReference = this.afire.collection('reactions');
 
   constructor(private http: HttpClient, private afire: AngularFirestore) { }
+
+  reaction$ = this.reactionsBS.pipe(
+    switchMap(()=> this.reactionReference.doc(this.reactionsBS.value).get()),
+    map(value => value)
+  );
   
   postBlog$ = this.postBlogBS.pipe(
     map((postList) => {
@@ -31,13 +38,12 @@ export class PostService {
               id: postVendor.guid,
               published: postVendor.pubDate,
               title: postVendor.title,
-              thumbnail: this.isImageEmpty(postVendor.thumbnail,"https://medium.com") ? null : postVendor.thumbnail,
+              thumbnail: postVendor.thumbnail.startsWith("https://medium.com") ? null : postVendor.thumbnail,
               description: postVendor.description,
               categories: postVendor.categories,
               reactions:[],
               feed : this.currentAuthor
             };
-            console.log(post);
             this.createPostToFirebase(post);
         }
         return post;
@@ -59,7 +65,6 @@ export class PostService {
       postItem.title = this.toText(postItem.title);
       postItem.author = this.toText(postItem.author);
       postItem.description = this.shortenText(this.toText(postItem.content), 0, 300);
-      //postItem.content = this.toText(postItem.content);
       const guidSplited = postItem.guid.split('/');
       postItem.guid = guidSplited[guidSplited.length - 1];
       postItem.type = PostType.MEDIUM_POST;
@@ -78,9 +83,13 @@ export class PostService {
     })
   );
 
+  public getMediumPostList(){
+      this.mediumPostsBS.next(true);
+  }
+
   public getCatcodePost() {
-    zip(this.mediumPosts$)
-      .pipe(
+    this.getMediumPostList();
+    zip(this.mediumPosts$).pipe(
         mergeAll()
       ).subscribe(
         (data) => {
@@ -90,7 +99,6 @@ export class PostService {
   }
 
   public getPostDetail(id) {
-    this.mediumPostsBS.next(true);
     this.getCatcodePost();
     this.postDetailBS.next(id);
   }
@@ -100,16 +108,6 @@ export class PostService {
     tag.innerHTML = node
     node = tag.innerText
     return node
-  }
-
-  private isImageEmpty(currentTxt, compareTxt){
-      console.log(currentTxt);
-      return(currentTxt.startsWith(compareTxt));
-  }
-
-  private toDOM(node){
-    const domParser = new DOMParser();
-    return domParser.parseFromString(node,'text/html');
   }
 
   private shortenText(text, startingPoint, maxLength) {
@@ -126,15 +124,19 @@ export class PostService {
        sad : 0,
        wow : 0
     };
-    const reactionRef = this.afire.collection('reactions').doc(post.id);
-    reactionRef.get().subscribe((docSnapshot)=>{
+    this.reactionsBS.next(post.id);
+    this.reaction$.subscribe((docSnapshot)=>{
       if(!docSnapshot.exists){
-          reactionRef.set({...reaction});
+        this.reactionReference.doc(post.id).set({...reaction});
       }
     })
   } 
 
-  
+  ngOnDestroy(): void {
+    this.reactionsBS.complete();
+    this.postDetailBS.complete();
+    this.mediumPostsBS.complete();
+  }
 
 }
 

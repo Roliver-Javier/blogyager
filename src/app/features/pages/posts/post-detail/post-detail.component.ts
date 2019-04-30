@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { PostService } from '../../../../core/services/post/post.service';
-import { map } from 'rxjs/internal/operators/map';
-import { combineLatest } from 'rxjs';
+import { PostService } from 'src/app/core/services/post.service';
 
 @Component({
   selector: 'app-post-detail',

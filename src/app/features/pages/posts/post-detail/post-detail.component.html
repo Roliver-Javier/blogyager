@@ -28,8 +28,10 @@
       fxFlex="0 1 20%" 
       fxFlex.lt-md="0 1 20%" 
       fxFlex.lt-sm="100%">
-      <mini-profile [author]="post.feed"></mini-profile>
-      <app-categories></app-categories>
+      <mini-profile 
+          [feed]="post.feed"
+          [author]="post.author"
+      ></mini-profile>
       <app-challenges></app-challenges>
     </div>
 </div>

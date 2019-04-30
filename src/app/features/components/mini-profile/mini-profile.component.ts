@@ -9,13 +9,13 @@ import { Observable } from 'rxjs';
 
 export class MiniProfileComponent implements OnInit{
 
-    @Input() author : object; 
+    @Input() author : string; 
+    @Input() feed : object;
     
     constructor(){
         
     }
 
     ngOnInit(){
-        console.log(this.author);
     }
 }
