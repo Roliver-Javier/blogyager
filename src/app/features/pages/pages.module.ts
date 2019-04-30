@@ -9,12 +9,14 @@ import { PostListComponent } from './posts/post-list/post-list.component';
 import { FeaturesComponentsModule } from '../components/featuresComponents.module';
 import { ReactionService } from 'src/app/core/services/reaction/reaction.service';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { ChallengePageComponent } from './challenge/challenge.component';
 
 const components = [
     HomeComponent,
     PostDetailComponent,
     PostDashboardComponent,
-    PostListComponent
+    PostListComponent,
+    ChallengePageComponent
 ];
 
 const providers = [

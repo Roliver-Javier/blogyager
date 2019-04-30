@@ -8,27 +8,28 @@
      fxLayoutGap="32px">
     
      <div 
-     fxFlex="0 1 calc(25% - 32px)"
-     fxFlex.lt-md="0 1 calc(25% - 32px)"
-     fxFlex.lt-sm="100%"
-     class="features-container">
-     <app-categories></app-categories>
-     <app-challenges></app-challenges>
- </div>   
+        fxFlex="0 1 calc(25% - 32px)"
+        fxFlex.lt-md="0 1 calc(25% - 32px)"
+        fxFlex.lt-sm="100%"
+        class="features-container">
+        <app-socials></app-socials>
+    </div>   
 
-     <app-post-list 
+    <app-post-list 
         fxFlex="0 1 calc(50% - 32px)" 
         fxFlex.lt-md="0 1 calc(50% - 32px)"
         fxFlex.lt-sm="100%"
-        [vm]="vm"></app-post-list>
+        [vm]="vm">
+    </app-post-list>
     
     <div 
         fxFlex="0 1 calc(25% - 32px)"
         fxFlex.lt-md="0 1 calc(25% - 32px)"
         fxFlex.lt-sm="100%"
         class="features-container">
-        <app-categories></app-categories>
+        
         <app-challenges></app-challenges>
+        <app-recommendation></app-recommendation>
     </div>    
 </div>
 

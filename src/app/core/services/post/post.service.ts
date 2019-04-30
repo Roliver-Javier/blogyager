@@ -90,6 +90,8 @@ export class PostService {
   }
 
   public getPostDetail(id) {
+    this.mediumPostsBS.next(true);
+    this.getCatcodePost();
     this.postDetailBS.next(id);
   }
 
@@ -112,7 +114,7 @@ export class PostService {
 
   private shortenText(text, startingPoint, maxLength) {
     const newText = text.length > maxLength ? text.slice(startingPoint, maxLength) : text
-    return newText + "[...]";
+    return newText + " [...]";
   }
 
   private createPostToFirebase(post : Post){
