@@ -1,7 +1,7 @@
 import { Injectable, OnDestroy } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map, switchMap, mergeAll } from 'rxjs/operators';
-import { BehaviorSubject, zip, of } from 'rxjs';
+import { map, switchMap, mergeAll, catchError, shareReplay, tap } from 'rxjs/operators';
+import { BehaviorSubject, zip, of, Observable, timer } from 'rxjs';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { Post } from 'src/app/shared/model/post';
 import { MediumModel } from 'src/app/shared/model/medium/MediumModel';
@@ -26,7 +26,31 @@ export class PostService implements OnDestroy{
     map(value => value)
   );
   
-  postBlog$ = this.postBlogBS.pipe(
+  
+
+  mediumPosts$ = this.mediumPostsBS.pipe( 
+    switchMap(() => this.http.get<MediumModel>(path.baseUrl.medium)),
+    map((mediumObject) =>  {
+      this.currentAuthor = mediumObject.feed;
+      return mediumObject.items;
+    } 
+    ),
+    map((posts) => posts.filter((post) => post.categories.length > 0)),
+    map((posts) => posts.map((postItem) => {
+
+      postItem.title = this.toText(postItem.title);
+      postItem.author = this.toText(postItem.author);
+      postItem.description = this.shortenText(this.toText(postItem.content), 0, 300);
+      const guidSplited = postItem.guid.split('/');
+      postItem.guid = guidSplited[guidSplited.length - 1];
+      postItem.type = PostType.MEDIUM_POST;
+      return postItem;
+    })
+    )
+    
+  );
+
+  postBlog$ = this.mediumPosts$.pipe(
     map((postList) => {
       const newPostList = postList.map((postVendor) => {
         let post: Post = null;
@@ -52,27 +76,6 @@ export class PostService implements OnDestroy{
     })
   );
 
-  mediumPosts$ = this.mediumPostsBS.pipe( 
-    switchMap(() => this.http.get<MediumModel>(path.baseUrl.medium)),
-    map((mediumObject) =>  {
-      this.currentAuthor = mediumObject.feed;
-      return mediumObject.items;
-    } 
-    ),
-    map((posts) => posts.filter((post) => post.categories.length > 0)),
-    map((posts) => posts.map((postItem) => {
-
-      postItem.title = this.toText(postItem.title);
-      postItem.author = this.toText(postItem.author);
-      postItem.description = this.shortenText(this.toText(postItem.content), 0, 300);
-      const guidSplited = postItem.guid.split('/');
-      postItem.guid = guidSplited[guidSplited.length - 1];
-      postItem.type = PostType.MEDIUM_POST;
-      return postItem;
-    })
-    )
-  );
-
   postDetail$ = this.postDetailBS.pipe(
     switchMap(() => this.postBlog$),
     map((posts) => {
@@ -83,19 +86,23 @@ export class PostService implements OnDestroy{
     })
   );
 
+
+  postCache$ : Observable<Post[]>;
+  
   public getMediumPostList(){
       this.mediumPostsBS.next(true);
   }
 
   public getCatcodePost() {
-    this.getMediumPostList();
-    zip(this.mediumPosts$).pipe(
-        mergeAll()
-      ).subscribe(
-        (data) => {
-          this.postBlogBS.next(data);
-        }
+    if(!this.postCache$){
+      const timer$ = timer(0, 30000);
+      this.postCache$ = timer$.pipe(
+        tap( _=>  this.getMediumPostList()),
+        switchMap( _=> this.postBlog$),
+        shareReplay(1)
       );
+    }
+   return this.postCache$;
   }
 
   public getPostDetail(id) {

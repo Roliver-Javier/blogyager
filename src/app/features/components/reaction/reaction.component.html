@@ -17,7 +17,8 @@
             <div *ngFor="let emoji of emojiList; index as i;" class="reaction.counts">
                 <div class="emoji__content" *ngIf="hasReactions(reactions, emoji)">
                     <img [src]="emojiPath(emoji)" />
-                    <small>{{ reactions[emoji]}}</small>
+                    <small class="reaction__text">{{emojiList[i]}}</small>
+                    <small class="reaction__votes">{{ reactions[emoji]}}</small>
                 </div>
             </div>
         </div> 

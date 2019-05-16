@@ -1,5 +1,5 @@
 <article class="post-list__container">
-  <div *ngFor="let post of vm.postBlog">
+  <div *ngFor="let post of vm.postCache">
     <egg-card>
       <div *ngIf="post.thumbnail" class="card-thumbnail">
         <img [src]="post.thumbnail" />
@@ -16,13 +16,11 @@
         </ng-container>
       </div>
 
-
-
       <p class="card-content">{{ post.description}}</p>
 
-      <ng-container class="card-footer">
+      <div class="card-footer">
         <reaction [postId]="post.id"></reaction>
-      </ng-container>
+      </div>
 
     </egg-card>
   </div>

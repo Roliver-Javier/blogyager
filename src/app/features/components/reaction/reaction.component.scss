@@ -42,6 +42,12 @@
       display:flex;
       flex-direction: column;
       align-items: center;
+      .reaction__text{
+        font-size:10px;
+      }
+      .reaction__votes{
+        font-size:9px;
+      }
     }
   }
   
@@ -49,7 +55,8 @@
     height: 100px;
     display: inline;
     float: left;
-  
+    
+    
     img {
       position: relative;
       bottom: -10px;

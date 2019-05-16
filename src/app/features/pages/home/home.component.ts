@@ -25,10 +25,10 @@ export class HomeComponent implements OnInit{
     }
 
     vm$ = combineLatest(
-        this.post.postBlog$
+        this.post.getCatcodePost()
     ).pipe(
-        map( ([postBlog ])=>({
-            postBlog
+        map( ([postCache])=>({
+            postCache
         }))
     );
     
