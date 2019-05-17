@@ -1,12 +1,12 @@
 import { Injectable, OnDestroy } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map, switchMap, mergeAll, catchError, shareReplay, tap } from 'rxjs/operators';
-import { BehaviorSubject, zip, of, Observable, timer } from 'rxjs';
+import { map, switchMap, shareReplay, tap } from 'rxjs/operators';
+import { BehaviorSubject, Observable, timer } from 'rxjs';
 import { AngularFirestore } from 'angularfire2/firestore';
-import { Post } from 'src/app/shared/model/post';
-import { MediumModel } from 'src/app/shared/model/medium/MediumModel';
-import { PostType } from 'src/app/shared/enums/post-type.enum';
-import { reaction } from 'src/app/shared/model/reaction';
+import { Post } from '../../shared/model/post';
+import { MediumModel } from '../../shared/model/medium/MediumModel';
+import { PostType } from '../../shared/enums/post-type.enum';
+import { reaction } from '../../shared/model/reaction';
 import { environment } from '../environments/environment';
 
 const MEDIUM_ENDPOINT = environment.medium;

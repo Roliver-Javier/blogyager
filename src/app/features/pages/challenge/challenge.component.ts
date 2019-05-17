@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { ChallengeService } from 'src/app/core/services/challenge.service';
-import { PostService } from 'src/app/core/services/post.service';
+import { ChallengeService } from '../../../core/services/challenge.service';
+import { PostService } from '../../../core/services/post.service';
 
 @Component({
     selector:'challenger-page',

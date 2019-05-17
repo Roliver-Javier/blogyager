@@ -5,9 +5,9 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { LikeButtonComponent } from './like-button/like-button.component';
 import { ShareButtonComponent } from './share-button/share-button.component';
 import { PostAvatarComponent } from './post-avatar/post-avatar.component';
-import { MaterialModule } from 'src/app/material.module';
+import { MaterialModule } from '../../material.module';
 import { FooterComponent } from './footer/footer.component';
-import { PagesRoutingModule } from 'src/app/features/pages/pages.routing';
+import { PagesRoutingModule } from '../../features/pages/pages.routing';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 const importsAndExports = [

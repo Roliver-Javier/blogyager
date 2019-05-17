@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Observable, BehaviorSubject } from 'rxjs';
-import { MediumModel } from 'src/app/shared/model/medium/MediumModel';
-import { MediumPost } from 'src/app/shared/model/medium/mediumPost';
+import { MediumModel } from '../../shared/model/medium/MediumModel';
+import { MediumPost } from '../../shared/model/medium/mediumPost';
 import {map, switchMap, shareReplay} from 'rxjs/operators';
-import { PostType } from 'src/app/shared/enums/post-type.enum';
+import { PostType } from '../../shared/enums/post-type.enum';
 
 @Injectable()
 export class PostServiceMock{
