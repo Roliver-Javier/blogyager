@@ -6,7 +6,10 @@ import { AngularFirestore } from 'angularfire2/firestore';
 import { Post } from 'src/app/shared/model/post';
 import { MediumModel } from 'src/app/shared/model/medium/MediumModel';
 import { PostType } from 'src/app/shared/enums/post-type.enum';
-import { reaction } from 'src/app/shared/model/reaction';import { path } from '../environments/environment';
+import { reaction } from 'src/app/shared/model/reaction';
+import { environment } from '../environments/environment';
+
+const MEDIUM_ENDPOINT = environment.medium;
 
 @Injectable()
 export class PostService implements OnDestroy{
@@ -29,7 +32,7 @@ export class PostService implements OnDestroy{
   
 
   mediumPosts$ = this.mediumPostsBS.pipe( 
-    switchMap(() => this.http.get<MediumModel>(path.baseUrl.medium)),
+    switchMap(() => this.http.get<MediumModel>(MEDIUM_ENDPOINT)),
     map((mediumObject) =>  {
       this.currentAuthor = mediumObject.feed;
       return mediumObject.items;

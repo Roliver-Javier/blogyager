@@ -10,7 +10,8 @@ import { Observable } from 'rxjs';
 export class MiniProfileComponent implements OnInit{
 
     @Input() author : string; 
-    @Input() feed : object;
+    @Input() feed : any;
+    
     
     constructor(){
         

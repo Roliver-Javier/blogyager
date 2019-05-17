@@ -1,7 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import {  environment } from './core/environments/environment';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireStorageModule } from 'angularfire2/storage';
@@ -14,6 +12,9 @@ import { FeaturesModule } from './features/features.module';
 import { AppRoutingModule } from './app.routing';
 import { HttpClientModule } from '@angular/common/http';
 import { FlexLayoutModule  } from '@angular/flex-layout';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from './core/environments/environment';
+
 
 const Imports = [
   AngularFireAuthModule,
@@ -33,7 +34,7 @@ const Imports = [
   declarations: [
     AppComponent
   ],
-  imports: [...Imports],
+  imports: [...Imports, ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })],
   // providers: [
   //   ...MockService.initializeMockProviders()
   // ],

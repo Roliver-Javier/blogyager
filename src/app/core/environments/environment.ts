@@ -3,7 +3,7 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false,
+  production:false,
   firebase : {
     apiKey: "AIzaSyCe7-dEhvqUQAouWh-nqQ1Z6C-hEDdKzis",
     authDomain: "egg-blog.firebaseapp.com",
@@ -11,14 +11,10 @@ export const environment = {
     projectId: "egg-blog",
     storageBucket: "egg-blog.appspot.com",
     messagingSenderId: "273163164075"
-  }
+  },
+  medium : 'https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@roliver_javier',
 };
 
-export const path = {
-    baseUrl : {//@roliver_javier @johnbwashington @benlesh
-      medium : 'https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@roliver_javier'
-    }
-}
 
 /*
  * For easier debugging in development mode, you can import the following file
