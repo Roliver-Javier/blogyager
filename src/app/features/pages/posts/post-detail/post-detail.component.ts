@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { PostService } from '../../../../shared/services/post.service';
-import { Post } from 'src/app/shared/model/post';
-import { tap } from 'rxjs/internal/operators/tap';
+import { PostService } from 'src/app/core/services/post.service';
 
 @Component({
   selector: 'app-post-detail',
@@ -11,10 +9,9 @@ import { tap } from 'rxjs/internal/operators/tap';
 })
 export class PostDetailComponent implements OnInit {
   
-  
-  constructor( private route : ActivatedRoute, private post : PostService) { }
-
   postDetail$ = this.post.postDetail$;
+
+  constructor( private route : ActivatedRoute, private post : PostService) { }
 
   ngOnInit() {
     this.getPostDetail();

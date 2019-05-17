@@ -1,7 +1,20 @@
 .feeds__container{
     padding:10px;
-    app-post-list{
+    
+    .postlist__container{
         margin-bottom: 0px !important;
+        padding-top:10px;
     }
+
+    .features__container{
+        display:flex;
+        flex-direction: column;
+        padding-top:10px;
+    }
+    .social__container{
+        padding-top:10px;
+    }
+    
 }
+
 

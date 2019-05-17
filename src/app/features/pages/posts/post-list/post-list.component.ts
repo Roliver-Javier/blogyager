@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { PostService } from 'src/app/shared/services/post.service';
+import { PostService } from 'src/app/core/services/post.service';
+
 
 @Component({
   selector: 'app-post-list',
@@ -8,12 +9,11 @@ import { PostService } from 'src/app/shared/services/post.service';
 })
 export class PostListComponent{
 
-  @Input() vm : {};
-
-  ngOnInit(){ 
-  }
+  @Input() vm : any;
 
   constructor(private post : PostService) { }
 
-
+  ngOnInit(){ 
+    this.post.getCatcodePost();
+  }
 }

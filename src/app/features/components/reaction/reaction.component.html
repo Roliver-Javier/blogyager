@@ -1,0 +1,27 @@
+<div *ngIf="(subscription$ | async) as reactions">
+    <div class="wrapper" (mouseenter)="toggleShow(true)" (mouseleave)="toggleShow(false)">
+        <div class="emojis" *ngIf="showEmojis">
+            <span *ngFor="let emoji of emojiList; index as i;">
+                <img [src]="emojiPath(emoji)" width='75px' (click)="react(reactions,i)">
+            </span>
+
+        </div>
+        <div *ngIf="hasNoReactions(reactions)">
+            <div class="reaction.counts">
+                <span>
+                    <img [src]="emojiPath(emojiList[0])" />
+                </span>
+            </div>
+        </div>
+        <div class="reactions" *ngIf="!hasNoReactions(reactions) || isReactionSelected">
+            <div *ngFor="let emoji of emojiList; index as i;" class="reaction.counts">
+                <div class="emoji__content" *ngIf="hasReactions(reactions, emoji)">
+                    <img [src]="emojiPath(emoji)" />
+                    <small class="reaction__text">{{emojiList[i]}}</small>
+                    <small class="reaction__votes">{{ reactions[emoji]}}</small>
+                </div>
+            </div>
+        </div> 
+
+    </div>
+</div>

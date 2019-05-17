@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Observable, BehaviorSubject } from 'rxjs';
-import { Post } from 'src/app/shared/model/post';
 import { MediumModel } from 'src/app/shared/model/medium/MediumModel';
 import { MediumPost } from 'src/app/shared/model/medium/mediumPost';
 import {map, switchMap, shareReplay} from 'rxjs/operators';
+import { PostType } from 'src/app/shared/enums/post-type.enum';
 
 @Injectable()
 export class PostServiceMock{
@@ -23,98 +23,106 @@ export class PostServiceMock{
             {
               author: "<p>Roliver Javier Rodriguez</p>",
               content: "<p> I've been a backend web developer for several years now. Swimming in the waters of databases, object oriented programming, and beautiful frameworks like Laravel to create some fairly robust web software for the company I work for, DieselCore.  </p>",
-              enclosure: null,
+              enclosure: {},
               categories: [],
               description: "",
               guid: "asasd1123ggfqQhf",
               link: "",
               pubDate: "29/02/2019",
               thumbnail: "",
-              title: "<h1><p>Learning Javascript, barcode scanning and wiggling into private grocery store APIs</p></h1>"
+              title: "<h1><p>Learning Javascript, barcode scanning and wiggling into private grocery store APIs</p></h1>",
+              type : PostType.MEDIUM_POST
             },
             {
               author: "<p>Antonia Montero</p>",
               content: "<p> I've been a backend web developer for several years now. Swimming in the waters of databases, object oriented programming, and beautiful frameworks like Laravel to create some fairly robust web software for the company I work for, DieselCore.  </p>",
-              enclosure: null,
+              enclosure: {},
               categories: [],
               description: "",
               guid: "asasd1123gg123",
               link: "",
               pubDate: "29/02/2019",
               thumbnail: "",
-              title: "<h1><p>Learning Javascript, barcode scanning and wiggling into private grocery store APIs</p></h1>"
+              title: "<h1><p>Learning Javascript, barcode scanning and wiggling into private grocery store APIs</p></h1>",
+              type : PostType.MEDIUM_POST
             },
             {
               author: "<p>Julio Sosa</p>",
               content: "<p> I've been a backend web developer for several years now. Swimming in the waters of databases, object oriented programming, and beautiful frameworks like Laravel to create some fairly robust web software for the company I work for, DieselCore.  </p>",
-              enclosure: null,
+              enclosure: {},
               categories: [],
               description: "",
               guid: "asasdfffff",
               link: "",
               pubDate: "29/02/2019",
               thumbnail: "",
-              title: "<h1><p>Learning Javascript, barcode scanning and wiggling into private grocery store APIs</p></h1>"
+              title: "<h1><p>Learning Javascript, barcode scanning and wiggling into private grocery store APIs</p></h1>",
+              type : PostType.MEDIUM_POST
             },
             {
               author: "<p>Ramon Caceres</p>",
               content: "<p> I've been a backend web developer for several years now. Swimming in the waters of databases, object oriented programming, and beautiful frameworks like Laravel to create some fairly robust web software for the company I work for, DieselCore.  </p>",
-              enclosure: null,
+              enclosure: {},
               categories: [],
               description: "",
               guid: "asasd1123ggggg",
               link: "",
               pubDate: "29/02/2019",
               thumbnail: "",
-              title: "<h1><p>Learning Javascript, barcode scanning and wiggling into private grocery store APIs</p></h1>"
+              title: "<h1><p>Learning Javascript, barcode scanning and wiggling into private grocery store APIs</p></h1>",
+              type : PostType.MEDIUM_POST
             },
             {
               author: "<p>Angela Ramirez</p>",
               content: "<p> I've been a backend web developer for several years now. Swimming in the waters of databases, object oriented programming, and beautiful frameworks like Laravel to create some fairly robust web software for the company I work for, DieselCore.  </p>",
-              enclosure: null,
+              enclosure: {},
               categories: [],
               description: "",
               guid: "asasd112bbbbf",
               link: "",
               pubDate: "29/02/2019",
               thumbnail: "",
-              title: "<h1><p>Learning Javascript, barcode scanning and wiggling into private grocery store APIs</p></h1>"
+              title: "<h1><p>Learning Javascript, barcode scanning and wiggling into private grocery store APIs</p></h1>",
+              type : PostType.MEDIUM_POST
             },
             {
               author: "<p>Miguel Santos</p>",
               content: "<p> I've been a backend web developer for several years now. Swimming in the waters of databases, object oriented programming, and beautiful frameworks like Laravel to create some fairly robust web software for the company I work for, DieselCore.  </p>",
-              enclosure: null,
+              enclosure: {},
               categories: [],
               description: "",
               guid: "asasd1hkhkk",
               link: "",
               pubDate: "29/02/2019",
               thumbnail: "",
-              title: "<h1><p>Learning Javascript, barcode scanning and wiggling into private grocery store APIs</p></h1>"
+              title: "<h1><p>Learning Javascript, barcode scanning and wiggling into private grocery store APIs</p></h1>",
+              type : PostType.MEDIUM_POST
             },
             {
               author: "<p>Rosa Mejia</p>",
               content: "<p> I've been a backend web developer for several years now. Swimming in the waters of databases, object oriented programming, and beautiful frameworks like Laravel to create some fairly robust web software for the company I work for, DieselCore.  </p>",
-              enclosure: null,
+              enclosure: {},
               categories: [],
               description: "",
               guid: "asasd1123g2342gv",
               link: "",
               pubDate: "29/02/2019",
               thumbnail: "",
-              title: "<h1><p>Learning Javascript, barcode scanning and wiggling into private grocery store APIs</p></h1>"
+              title: "<h1><p>Learning Javascript, barcode scanning and wiggling into private grocery store APIs</p></h1>",
+              type : PostType.MEDIUM_POST
             },
             {
               author: "<p>Tulio smith</p>",
               content: "<p> I've been a backend web developer for several years now. Swimming in the waters of databases, object oriented programming, and beautiful frameworks like Laravel to create some fairly robust web software for the company I work for, DieselCore.  </p>",
-              enclosure: null,
+              enclosure: {},
               categories: [],
               description: "",
               guid: "asasd1123asdasd55",
               link: "",
               pubDate: "29/02/2019",
               thumbnail: "",
-              title: "<h1><p>Learning Javascript, barcode scanning and wiggling into private grocery store APIs</p></h1>"
+              title: "<h1><p>Learning Javascript, barcode scanning and wiggling into private grocery store APIs</p></h1>",
+              type : PostType.MEDIUM_POST
             }],
           status:'ok'
         };

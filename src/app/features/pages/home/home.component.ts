@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { PostService } from 'src/app/shared/services/post.service';
+
 import { combineLatest } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { PostService } from 'src/app/core/services/post.service';
 
 @Component({
     selector:'app-home',
@@ -22,13 +23,12 @@ export class HomeComponent implements OnInit{
     onResize(event) {
         this.breakpoint = (event.target.innerWidth <= 400) ? 1 : 6;
     }
-    
 
     vm$ = combineLatest(
-        this.post.mediumPosts$
+        this.post.getCatcodePost()
     ).pipe(
-        map( ([mediumPosts])=>({
-            mediumPosts
+        map( ([postCache])=>({
+            postCache
         }))
     );
     

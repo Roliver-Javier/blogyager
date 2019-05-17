@@ -1,8 +1,8 @@
-import { Category } from './Category';
+import { PostType } from '../../enums/post-type.enum';
 
 export interface MediumPost{
     author: string;
-    categories : Category[];
+    categories : [];
     content : string;
     description : string;
     enclosure : object;
@@ -11,4 +11,5 @@ export interface MediumPost{
     pubDate : string;
     thumbnail : string;
     title : string;
+    type : PostType;
 }

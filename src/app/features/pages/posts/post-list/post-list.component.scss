@@ -1,3 +1,22 @@
-article{
- 
+.post-list__container{
+
+    .card-author{
+        font-size:12px;
+    }
+    .card-thumbnail{
+        img{
+            height: 8em;
+            width: 100%;
+            object-fit: cover;
+            padding-bottom:5px;
+        }
+    }
+    .card-content{
+        word-break: break-all;
+    }
+    .card-footer{
+        display:flex;
+        flex-direction: column;
+        align-items:center;
+    }
 }

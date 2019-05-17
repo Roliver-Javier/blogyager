@@ -3,11 +3,14 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start":"ng serve",
+    "build":"ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "lite":"lite-server",
+    "postinstall":"ng build --aot -prod",
+    "heroku-postbuild":"ng build --prod"
   },
   "private": true,
   "dependencies": {
@@ -21,10 +24,15 @@
     "@angular/material": "^7.3.7",
     "@angular/platform-browser": "~7.2.0",
     "@angular/platform-browser-dynamic": "~7.2.0",
+    "@angular/pwa": "^0.12.4",
     "@angular/router": "~7.2.0",
+    "@angular/service-worker": "~7.2.0",
+    "@ngmodule/material-carousel": "^0.3.1",
     "angularfire2": "^5.1.2",
     "core-js": "^2.5.4",
     "firebase": "^5.9.3",
+    "lodash": "^4.17.11",
+    "phantomjs": "^2.1.7",
     "rxjs": "~6.3.3",
     "tslib": "^1.9.0",
     "zone.js": "~0.8.26"
@@ -35,8 +43,13 @@
     "@angular/compiler-cli": "~7.2.0",
     "@angular/language-service": "~7.2.0",
     "@types/node": "~8.9.4",
+    "lite-server": "^2.4.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.11.0",
     "typescript": "~3.2.2"
+  },
+  "engines":{
+    "node": "10.14.2",
+    "npm": "6.4.1"
   }
 }

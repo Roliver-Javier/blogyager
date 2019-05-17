@@ -1,0 +1,26 @@
+
+.recommendation__content{
+    .card-content{
+        .recommend-list{
+            overflow-wrap: break-word;
+            padding-bottom:10px;
+            list-style: none;
+            .icon{
+                width:15px;
+                height:15px;
+                padding-right:5px;
+            }
+            p{
+                margin: 0;
+                a{
+                    color:#000000;
+                    text-decoration: none;
+                    &:hover{
+                        color:#2e2e2e;
+                    }
+                }
+            }
+        }
+    }
+}
+

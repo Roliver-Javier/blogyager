@@ -1,26 +1,31 @@
 
 ::ng-deep{
+    
     .mat-card-header-text{
-        width:80%;
         margin:0;
+        width:100%;
     }
     .post-box{
         border: 1px solid #6e737c;
         border-bottom: 5px solid #6e737c;
         border-right: 5px solid #6e737c;
-        font-family: 'Segoe UI';
+        font-family: 'Merriweather';
         margin-bottom:20px;
-    
+
         .__card-header{
+       
             .__card-titles{
-                & :first-child[_ngcontent-c3]{
+                & *[_ngcontent-c7]{
                     color: #263238;
-                    font-size:20px;
+                    font-size:18px;
+                    line-height:32px;
                 }
             }
+
+            
             .__tags{
                 word-wrap: break-word;
-                & *[_ngcontent-c3]{
+                a{
                         margin-right:5px;
                         font-size:14px;
                         text-decoration: none;
@@ -31,23 +36,24 @@
         }
 
         .__card-content{
-            padding-left:5px;
             *[_ngcontent-c3]{
                 font-size:14px;
                 color:rgba(0, 0, 0, 0.54);
+                figure{
+                    display:flex;
+                    flex-direction:column;
+                    align-items:center;
+                }
             }
+            
         }
 
         .post-box__footer{
-            display:flex;
-            flex-direction: column;
-
-            .__card-right-actions{
-                padding-left:10px;
+            .__card-actions{
+                padding-right:10px;
                 margin-bottom:0;
-                *[_ngcontent-c3]{
-                    padding-left:10px;
-                }
+                display:flex;
+                flex-direction: column;
             }
         }
     }

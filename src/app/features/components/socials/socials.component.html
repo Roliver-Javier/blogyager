@@ -1,0 +1,27 @@
+<article class="socials__content">
+    <egg-card>
+        <ng-container class="card-title">
+            <p>#Follow us</p>
+        </ng-container>
+        <div class="card-content">
+            <mat-list>
+                <h1 mat-subheader>Contributors</h1>
+                <ng-container *ngFor="let collab of contributors">
+                    <mat-card class="collabs-container">
+                        <mat-card-header>
+                            <img mat-card-avatar class="collabs__image" [src]="collab.image"/>
+                            <mat-card-title class="collabs__name">{{collab.name}}</mat-card-title>
+                            <mat-card-subtitle class="collabs__socials">
+                                <ng-container *ngFor="let social of collab.socials">
+                                    <a href="{{social.link}}"> 
+                                            <mat-icon class="icon" svgIcon="{{social.icon}}" mat-list-icon></mat-icon>
+                                        </a>
+                                </ng-container>
+                            </mat-card-subtitle>
+                        </mat-card-header>
+                    </mat-card>
+                </ng-container>
+            </mat-list>
+        </div>
+    </egg-card>
+</article>

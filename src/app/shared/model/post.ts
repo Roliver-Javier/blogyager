@@ -1,9 +1,15 @@
+import { reaction } from './reaction';
+
 export class Post {
     id? : string
     title : string
     author : string
-    authorId : string
     content : string
-    image : string
-    published : Date
+    description: string
+    thumbnail : string
+    published : string
+    reactions: reaction[]
+    categories : string[]
+    feed : object
+    
 }

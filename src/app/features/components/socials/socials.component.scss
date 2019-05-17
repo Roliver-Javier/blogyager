@@ -1,0 +1,30 @@
+
+.socials__content{
+    .card-content{
+        .collabs-container{
+            box-shadow: none;
+            font-size:12px;
+            padding:5px;
+            .collabs__image{
+                height: 60px;
+                width: 60px;
+                border-radius: 50%;
+                flex-shrink: 0;
+                object-fit: cover;
+           
+            }
+            .collabs__name{
+                padding-left:10px;
+                padding-top:5px;
+                font-size:16px;
+                color:#6e737c;
+            }
+            .collabs__socials{
+                padding-left:10px;
+                .icon{
+                    padding-right:10px;
+                }
+            }
+        }
+    }
+}

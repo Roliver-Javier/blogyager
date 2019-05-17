@@ -1,0 +1,21 @@
+<article class="recommendation__content">
+    <egg-card>
+        <ng-container class="card-title">
+            <p>#Recommendations</p>
+        </ng-container>
+        <div class="card-content">
+            <ng-container *ngFor="let recommend of recommendations">
+                <div class="recommend-list">
+                    <p>
+                        <span>
+                            <mat-icon class="icon" svgIcon="ico-point">folder</mat-icon>
+                            <a href="{{recommend.link}}">{{recommend.title}}</a>
+                        </span>
+                    </p>
+                    <small>{{recommend.author}}</small>
+                </div>
+            </ng-container>
+
+        </div>
+    </egg-card>
+</article>
