@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, BehaviorSubject } from 'rxjs';
-import { MediumModel } from '@app/shared/model/medium/MediumModel';
+import { MediumModel } from '@app/shared/model/medium/mediumModel';
 import { MediumPost } from '@app/shared/model/medium/mediumPost';
 import {map, switchMap, shareReplay} from 'rxjs/operators';
 import { PostType } from '@app/shared/enums/post-type.enum';

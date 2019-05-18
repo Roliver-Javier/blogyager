@@ -4,7 +4,7 @@ import { map, switchMap, shareReplay, tap } from 'rxjs/operators';
 import { BehaviorSubject, Observable, timer } from 'rxjs';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { Post } from '@app/shared/model/post';
-import { MediumModel } from '@app/shared/model/medium/MediumModel';
+import { MediumModel } from '@app/shared/model/medium/mediumModel';
 import { PostType } from '@app/shared/enums/post-type.enum';
 import { reaction } from '@app/shared/model/reaction';
 import { environment } from '@app/core/environments/environment';
