@@ -27,5 +27,9 @@ export class AppComponent {
       'ico-github',
       sanitizer.bypassSecurityTrustResourceUrl('assets/icon/github.svg')
     )
+    .addSvgIcon(
+      'ico-medium',
+      sanitizer.bypassSecurityTrustResourceUrl('assets/icon/medium.svg')
+    )
   }
 }

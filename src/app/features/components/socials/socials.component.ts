@@ -8,6 +8,7 @@ interface Social {
 export interface Contributors {
     name: string;
     image: string;
+    defaultAlias: string,
     socials: Social[];
 }
 
@@ -24,8 +25,9 @@ export class SocialsComponent {
     contributors: Contributors[] =
         [
             {
-                image: 'https://pbs.twimg.com/profile_images/1114653707084419073/Vwbu7_ZK_400x400.png',
+                image: 'https://avatars0.githubusercontent.com/u/6831595?s=460&v=4',
                 name: 'Roliver Javier',
+                defaultAlias:'@RoliverJ',
                 socials: [
                     {
                         icon: 'ico-github',
@@ -36,12 +38,18 @@ export class SocialsComponent {
                         icon: 'ico-tweet',
                         link: 'https://twitter.com/RoliverJ',
                         alias: '@RoliverJ'
+                    },
+                    {
+                        icon: 'ico-medium',
+                        link:'https://medium.com/@roliver_javier',
+                        alias:'@roliver_javier'
                     }
                 ]
             },
             {
                 image: 'https://avatars2.githubusercontent.com/u/44442099?s=400&v=4',
                 name: 'Jose Rosario',
+                defaultAlias:'@jprrpro ',
                 socials: [
                     {
                         icon : 'ico-github',
@@ -51,13 +59,14 @@ export class SocialsComponent {
                     {
                         icon : 'ico-tweet',
                         link: 'https://twitter.com/jprrpro',
-                        alias: '@@jprrpro '
+                        alias: '@jprrpro '
                     }
                 ]
             },
             {
                 image: 'https://avatars2.githubusercontent.com/u/4911690?s=400&v=4',
                 name: 'Raymond Coplin',
+                defaultAlias:'@RaymondCoplin',
                 socials: [
                     {
                         icon: 'ico-github',

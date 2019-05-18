@@ -1,13 +1,14 @@
 <app-header></app-header>
 <!-- <reaction></reaction> -->
-<div *ngIf="(vm$ | async) as vm"
+    
+<div 
      fxLayoutAlign="flex-start"
      class="feeds__container" 
      fxLayout.lt-sm="column" 
      fxLayout="row wrap"
-     fxLayoutGap="32px">
-    
-     <div 
+     fxLayoutGap="32px">  
+
+    <div 
         fxFlex="0 1 calc(26% - 32px)"
         fxFlex.lt-md="0 1 calc(25% - 32px)"
         fxFlex.lt-sm="100%"
@@ -15,7 +16,8 @@
         <app-socials></app-socials>
     </div>   
 
-    <div 
+     <div 
+        *ngIf="(vm$ | async) as vm"
         fxFlex="0 1 calc(50% - 32px)" 
         fxFlex.lt-md="0 1 calc(50% - 32px)"
         fxFlex.lt-sm="100%"
@@ -32,9 +34,7 @@
         
         <app-challenges></app-challenges>
         <app-recommendation></app-recommendation>
-    </div>    
+    </div> 
 </div>
-
-
 
  
