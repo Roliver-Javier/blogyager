@@ -9,12 +9,13 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "lite": "lite-server",
-    "postinstall":"ng build --prod"
+    "postinstall": "ng build --prod"
   },
   "private": true,
   "dependencies": {
     "@angular/animations": "^7.2.12",
     "@angular/cdk": "^7.3.7",
+    "@angular/cli": "~7.3.7",
     "@angular/common": "~7.2.0",
     "@angular/compiler": "~7.2.0",
     "@angular/core": "~7.2.0",
