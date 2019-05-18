@@ -9,7 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "lite": "lite-server",
-    "heroku-postbuild": "ng build --prod"
+    "postinstall":"ng build --prod"
   },
   "private": true,
   "dependencies": {
