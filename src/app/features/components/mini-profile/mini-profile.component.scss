@@ -3,6 +3,7 @@
     .author{
         display:flex;
         flex-direction: column;
+        word-break: break-all;
         align-items: center;
         p{
             font-size:1.5em;
@@ -15,6 +16,7 @@
     .detail{
         display:flex;
         flex-direction: column;
+        word-break: break-all;
         .avatar{
             display:flex;
             flex-direction: column;
