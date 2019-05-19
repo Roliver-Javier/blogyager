@@ -4,7 +4,7 @@
             <p>#Recommendations</p>
         </ng-container>
         <div class="card-content">
-            <ng-container *ngFor="let recommend of recommendations">
+            <ng-container *ngFor="let recommend of recommendations$ | async ">
                 <div class="recommend-list">
                     <p>
                         <span>
@@ -12,7 +12,7 @@
                             <a href="{{recommend.link}}">{{recommend.title}}</a>
                         </span>
                     </p>
-                    <small>{{recommend.author}}</small>
+                    <small>{{recommend.author}} </small>
                 </div>
             </ng-container>
 

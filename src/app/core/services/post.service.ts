@@ -89,7 +89,6 @@ export class PostService implements OnDestroy{
     })
   );
 
-
   postCache$ : Observable<Post[]>;
   
   public getMediumPostList(){

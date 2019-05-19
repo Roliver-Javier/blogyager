@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ContributorsService } from '@app/core/services/contributors.service';
 
 interface Social {
     link: string;
@@ -19,9 +20,10 @@ export interface Contributors {
 })
 
 export class SocialsComponent {
-    constructor() {
+    constructor(public contributorsServ : ContributorsService) {}
 
-    }
+    // contributors$ = this.contributors.contributors$;
+
     contributors: Contributors[] =
         [
             {

@@ -10,6 +10,8 @@ import { ReactionService } from '../../core/services/reaction.service';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ChallengePageComponent } from './challenge/challenge.component';
 import { PostService } from '../../core/services/post.service';
+import { RecommendationService } from '@app/core/services/recommendation.service';
+import { ContributorsService } from '@app/core/services/contributors.service';
 
 const components = [
     HomeComponent,
@@ -21,7 +23,9 @@ const components = [
 
 const providers = [
     PostService,
-    ReactionService
+    ReactionService,
+    RecommendationService,
+    ContributorsService
 ];
 
 @NgModule({

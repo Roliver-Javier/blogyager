@@ -6,7 +6,7 @@
         <div class="card-content">
             <mat-list>
                 <h1 mat-subheader>Contributors</h1>
-                <ng-container *ngFor="let collab of contributors">
+                <ng-container *ngFor="let collab of (contributors)">
                     <mat-card class="collabs-container">
                         <mat-card-header>
                             <img mat-card-avatar class="collabs__image" [src]="collab.image"/>
