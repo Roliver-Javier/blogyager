@@ -5,12 +5,7 @@
 export const environment = {
   production:false,
   firebase : {
-    apiKey: "AIzaSyCe7-dEhvqUQAouWh-nqQ1Z6C-hEDdKzis",
-    authDomain: "egg-blog.firebaseapp.com",
-    databaseURL: "https://egg-blog.firebaseio.com",
-    projectId: "egg-blog",
-    storageBucket: "egg-blog.appspot.com",
-    messagingSenderId: "273163164075"
+    //Firebase credentials
   },
   medium : 'https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@roliver_javier',
 };
