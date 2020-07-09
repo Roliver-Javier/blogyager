@@ -12,4 +12,4 @@ https://blogyager.herokuapp.com/home
 | Firebase Cloud Database |
 | Heroku Cloud Application Platform | 
 | Rxjs | 
-| Medium RSS Service (For Now!!) |
+| Medium RSS Service (By Now!!) |
